@@ -1,7 +1,7 @@
 # RAIDER OASIS
 ## Descripción general
 Juego multijugador online de aventura y rol. Ambientación basada en la exploración de ruinas egipcias donde el jugador deberá colaborar o competir con otros jugadores para derrotar a enemigos y conseguir valiosos tesoros.
-##Mécanicas
+## Mécanicas
 Mecánica centrada en la exploración de mazmorras. El objetivo principal del jugador será recolectar tesoros a medida que derrota a enemigos o resuelve pequeños puzles que se le puedan presentar por el camino. Las mazmorras estarán definidas por diversas plantas, cada una compuesta por un número finito de salas que se generarán de forma aleatoria.
 
 #### Sistema de Combate
