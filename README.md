@@ -9,7 +9,7 @@ Combate basado en la acción. El jugador podra realizar diferentes ataques a tra
 
 #### Sistema de progreso
 El jugador prodrá progresar en el juego a través de la obtención de experiencia. Dicha experiencia es obtenible a partir de:
-- Derrota de enimgos
+- Derrota de enemigos
 - Hazañas y tesoros descubiertos
 
 Complementariamente, también se podrán cambiar el equipamiento y armas del jugador, para así cambiar las estadísticas de combate. Más detalles de la economía del juego serán detallados en el documento de diseño de la Fase 2 del proyecto.
@@ -33,3 +33,7 @@ Por otro lado, las partidas se organizarán en diferentes salas de jugadores, do
 - El sistema soportará la existencia de diferentes salas para alojar partidas de jugadores. Dichas salas podrán ser tanto privadas (con un nombre y contraseña) como publicas, donde los jugadores se eligen de forma aleatoria.
 - El sistema será capaz de responder a los diferentes tipos de navegares, adaptandose al dispositivo (responsive).
 - Resto de requisitos necesarios para el desarrollo correcto de una partida como la descrita en este documento. Enfásis posterior de dichas carácterísticas en el documento de diseño de la Fase 2 del proyecto.
+
+## Otros recursos
+
+Enlace al grupo de trabajo en trello: [trello.com/juegosenred](http://https://trello.com/juegosenred)
