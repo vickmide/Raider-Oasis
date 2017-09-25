@@ -36,4 +36,4 @@ Por otro lado, las partidas se organizarán en diferentes salas de jugadores, do
 
 ## Otros recursos
 
-Enlace al grupo de trabajo en trello: [click para acceder al tablero](http://https://trello.com/juegosenred)
+Enlace al grupo de trabajo en trello: [trello.com/juegosenred](https://trello.com/juegosenred/members)
