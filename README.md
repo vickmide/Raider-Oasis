@@ -34,6 +34,12 @@ Por otro lado, las partidas se organizarán en diferentes salas de jugadores, do
 - El sistema será capaz de responder a los diferentes tipos de navegares, adaptandose al dispositivo (responsive).
 - Resto de requisitos necesarios para el desarrollo correcto de una partida como la descrita en este documento. Enfásis posterior de dichas carácterísticas en el documento de diseño de la Fase 2 del proyecto.
 
-## Otros recursos
+## Equipo de desarrollo
+
+| Nombre | Correo URJC | Usuario Github |
+|--------|--------|--------|
+|Víctor Manuel Palma Morales|vm.palma@alumnos.urjc.es|vmpalmamorales|
+|José Ángel Cívico Martos|ja.civico@alumnos.urjc.es|Gleanx|
+|Nicolás Morales Berea|i.moralesb@alumnos.urjc.es|nichromatic|
 
 Enlace al grupo de trabajo en trello: [trello.com/juegosenred](https://trello.com/juegosenred/members)
