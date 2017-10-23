@@ -1,0 +1,120 @@
+body {
+    background-image:url("img/sky.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    font-size: 1.2em;
+    height: 50px;
+    font-weight: bold;
+    word-spacing: 0.1em;
+    margin-bottom: 0;
+    border-radius: 0;
+    font-family: 'Julius Sans One', sans-serif;    
+}
+
+#canvas-juego {
+    margin-top: 50px; /* Para que no lo tape el navbar */
+}
+
+.glyphicon {
+    font-size: 0.9em;
+}
+
+.sidenav {
+    padding: 5em;
+}
+
+a.list-group-item {
+    background-color: #0099FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    margin-top: 7px;
+}
+
+a.list-group-item:hover{
+    background-color: #7BBEEB;
+    color: #ffffff;
+}
+
+.list-group-item-heading {
+    margin-top: 1em;
+}
+
+.well {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    text-shadow: 0px 0px 5px #000000;
+}
+
+h2 {
+    font-family: 'Julius Sans One', sans-serif;
+    text-shadow: 0px 0px 5px #000000;
+}
+
+#logo {
+    background: transparent;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #000000;
+    padding: 10em 2em 5em 2em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#wrap {
+    /* Fondo de la seccion de contenido de la web */
+    background-image: url("img/city.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    /* Margenes y padding para colocar el elemento en la pagina y definir su tamaño */
+    padding-top: 250px;
+    margin-top: 30em;
+    min-block-size: 50em;
+}
+
+.login-box {
+    max-width: 20em;
+    display: block;
+    margin: auto;
+    color: #ffffff;
+}
+
+.btn-login-box {
+    background-color: #0099FF;
+    min-width: 30%;
+    margin: 0px 5px 0px 5px;
+}
+
+.btn-login-box:hover {
+    background-color: #7BBEEB;
+    color: #ffffff;
+}
+
+.alert {
+    margin: 2em 0em 0em 0em;
+    padding: 0.3em;
+}
+
+.form-control {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+footer {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+    background-color: #222;
+    border: solid 1px #080808;
+    color: #464646;
+    padding: 2em 5em 2em 5em;
+}

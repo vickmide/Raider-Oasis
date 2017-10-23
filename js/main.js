@@ -1,6 +1,6 @@
 var ProceduralGeneration = ProceduralGeneration || {};
 
-var game = new Phaser.Game(600, 600, Phaser.CANVAS);
+var game = new Phaser.Game(600, 600,'canvas-juego', Phaser.CANVAS);
 game.state.add("BootState", new ProceduralGeneration.BootState());
 game.state.add("LoadingState", new ProceduralGeneration.LoadingState());
 game.state.add("DungeonState", new ProceduralGeneration.DungeonState());

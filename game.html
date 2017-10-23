@@ -16,6 +16,27 @@
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> <!-- Google font -->    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery library -->    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- (Bootstrap) Latest compiled JavaScript -->
+
+    <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script> JQuery ya estaba importado antes -->
+    
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="js/gestures/gestures.js"></script>  
+    <script type="text/javascript" src="js/gestures/implements_gestures.js"></script>  
+    <script type="text/javascript" src="js/phaser.js"></script>
+            
+    <script src="js/states/BootState.js"></script>
+    <script src="js/states/LoadingState.js"></script>
+    <script src="js/states/DungeonState.js"></script>
+    <script src="js/states/RoomState.js"></script>
+            
+    <script src="js/dungeon/Dungeon.js"></script>
+    <script src="js/dungeon/Room.js"></script>
+            
+    <script src="js/prefabs/Prefab.js"></script>
+    <script src="js/prefabs/Hero.js"></script>
+    <script src="js/prefabs/Door.js"></script>
+            
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
     
 
@@ -33,8 +54,8 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-              <li><a href="game.html"><span class="glyphicon glyphicon-play"></span> Play!</a></li>
+              <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              <li class="active"><a href="#"><span class="glyphicon glyphicon-play"></span> Play!</a></li>
               <li class="disabled"><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
               <li class="disabled"><a href="#"><span class="glyphicon glyphicon-king"></span> Leaderboards</a></li>
               <li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
@@ -43,47 +64,7 @@
         </div>
     </nav>
 
-    <!-- Jumbotron con el logo -->
-    <div class="jumbotron" id="logo">
-      <div class="container text-center">
-        <h1>Raider Oasis</h1>
-      </div>
+    <div id="canvas-juego">
+        <!-- Insertar el canvas del juego aqui -->
     </div>
-
-    <!-- Bloque de login -->
-<div class="container-fluid text-center" id="wrap">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <!-- Aqui se pueden poner cosas extra-->
-    </div>
-    <div class="col-sm-8 text-center"> 
-      <div class="login-box">
-        <h1>Login</h1>
-        <form>
-          <div class="form-group">
-            <label for="email">Username</label>
-            <input type="text" class="form-control" id="username">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password</label>
-            <input type="password" class="form-control" id="pwd">
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox"> Remember me</label>
-          </div>
-          <button type="submit" class="btn btn-login-box" id="btn-login">Login</button>
-          <button type="submit" class="btn btn-login-box" id="btn-register">Register</button>       
-        </form>
-      </div>
-    </div>
-    <div class="col-sm-2 sidenav">
-      <!-- Aqui se pueden poner cosas extra -->
-    </div>
-  </div>
-  </div>
-
-    <!-- Footer de la página -->
-  <footer class="container-fluid text-center">
-      <p>Práctica para la asignatura Juegos en Red del grado de Diseño y Desarrollo de Videojuegos de la URJC realizada por Víctor, Ángel, Nicolás.</p>
-  </footer>
 </body>
