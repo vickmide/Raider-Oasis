@@ -20,19 +20,25 @@
     
 
 <body>
-    <!-- Navbar superior -->
+    <!-- NAVBAR SUPERIOR -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
+            <!-- El toggle para cuando la página es demasiado estrecha y el menú se transforma en un dropdown -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>                        
             </button>
+            <!-- Nombre de la web (a la izquierda) -->
             <a class="navbar-brand" href="#">Raider Oasis</a>
           </div>
+          <!-- Contenido del menú de la navbar en si (a la derecha) -->
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
+              <!-- li: list-item, puede estar activo (seleccionado) o disabled (no se puede pulsar)
+              a: redirecciona a la página que corresponde, al ser paginas locales simplemente se escribe el nombre del html
+              span class = "glyphicon-x" : coloca el glyphicon indicado (vienen con bootstrap) el contenido se deja vacío -->
               <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
               <li><a href="game.html"><span class="glyphicon glyphicon-play"></span> Play!</a></li>
               <li class="disabled"><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
@@ -43,21 +49,23 @@
         </div>
     </nav>
 
-    <!-- Jumbotron con el logo -->
+    <!-- JUMBOTRON CON EL LOGO -->
+    <!-- En la página principal contiene el nombre del juego, pero aquí solo ocupa el espacio para dejar hueco entre el navbar y el contenido -->
     <div class="jumbotron" id="logo">
     </div>
 
-    <!-- Bloque de contenido -->
+    <!-- BLOQUE DE CONTENIDO -->
 <div class="container-fluid text-center" id="wrap" style="margin-top: 4em;">    
   <div class="row content">
 
     <div class="col-sm-3 sidenav">
-      <!-- Navegacion del about -->
+      <!-- NAVEGACIÓN DEL ABOUT -->
+      <!-- Es un elemento de la clase 'list-group' de bootstrap con el css muy editado. Cada uno redirige al apartado correspondiente del contenido sin cambiar de página -->
       <div class="list-group">
         <h2 class="list-group-item-heading">Game Features</h2>
-        <a href="#game-feature1" class="list-group-item">First item</a>
-        <a href="#game-feature2" class="list-group-item">Second item</a>
-        <a href="#game-feature3" class="list-group-item">Third item</a>
+        <a href="#game-feature1" class="list-group-item">Story</a>
+        <a href="#game-feature2" class="list-group-item">Game Modes</a>
+        <a href="#game-feature3" class="list-group-item">Multiplayer</a>
         <h2 class="list-group-item-heading">Documentation</h2>
         <a href="#documentation1" class="list-group-item">About us</a>
         <a href="#documentation2" class="list-group-item">Framework & libs</a>
@@ -65,7 +73,9 @@
       </div>
     </div>
     
-    <!-- Contenido del about -->
+    <!-- CONTENIDO DEL ABOUT -->
+    <!-- El contenido consta de varias filas y 2 columnas, para colocar a un lado texto con un titulo y al otro una imagen representativa -->
+    <!-- Al definir una row dentro de un elemento, aunque pongamos que sean de tamaño 6 y 6, solo cubren el espacio del elemento padre y no de toda la pantalla -->
     <div class="col-sm-6 text-center"> 
       <h1>About this project</h1>
  
@@ -130,14 +140,14 @@
 
     <div class="col-sm-3 sidenav">
       <!-- Aqui se pueden poner cosas extra -->
-      <div class="well">Basic Well</div>
+      <div class="well">Texto</div>
     </div>
 
   </div>
 
   </div>
 
-    <!-- Footer de la página -->
+    <!-- FOOTER DE LA PÁGINA -->
   <footer class="container-fluid text-center">
       <p>Práctica para la asignatura Juegos en Red del grado de Diseño y Desarrollo de Videojuegos de la URJC realizada por Víctor, Ángel, Nicolás.</p>
   </footer>
