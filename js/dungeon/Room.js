@@ -2,14 +2,14 @@ var ProceduralGeneration = ProceduralGeneration || {};
 
 ProceduralGeneration.Room = function (game_state, coordinate, tile_dimensions) {
     "use strict";
-    this.game_state = game_state;
-    this.coordinate = coordinate;
-    this.tile_dimensions = tile_dimensions;
+    this.game_state = game_state; //estado del juego correspondiente a cada sal
+    this.coordinate = coordinate; // coordenadas de la sala
+    this.tile_dimensions = tile_dimensions; //dimensiones del tile
 
     this.neighbors = {};
 };
 
-ProceduralGeneration.Room.prototype.neighbor_coordinates = function () {
+ProceduralGeneration.Room.prototype.neighbor_coordinates = function () { //función que devuelve las salas vecinas
     "use strict";
     var neighbor_coordinates;
     neighbor_coordinates = [
@@ -21,7 +21,7 @@ ProceduralGeneration.Room.prototype.neighbor_coordinates = function () {
     return neighbor_coordinates;
 };
 
-ProceduralGeneration.Room.prototype.connect = function (direction, room) {
+ProceduralGeneration.Room.prototype.connect = function (direction, room) { //conecta las salas (?)
     "use strict";
     this.neighbors[direction] = room;
 };

@@ -4,7 +4,7 @@ ProceduralGeneration.DungeonState = function () {
     "use strict";
     Phaser.State.call(this);
 
-    this.LEVEL_FILE = "assets/levels/room_level.json";
+    this.LEVEL_FILE = "assets/levels/room_level.json";  //donde está el JSON
 };
 
 ProceduralGeneration.DungeonState.prototype = Object.create(Phaser.State.prototype);
@@ -12,15 +12,17 @@ ProceduralGeneration.DungeonState.prototype.constructor = ProceduralGeneration.D
 
 ProceduralGeneration.DungeonState.prototype.init = function (number_of_rooms) {
     "use strict";
-    this.number_of_rooms = number_of_rooms;
-    this.dungeon = this.dungeon || new ProceduralGeneration.Dungeon(this);
+    this.number_of_rooms = number_of_rooms; //número de salas que queremos
+    this.dungeon = this.dungeon || new ProceduralGeneration.Dungeon(this); //si no se ha creado, crea la mazmorra
 };
 
 ProceduralGeneration.DungeonState.prototype.create = function () {
     "use strict";
-    var initial_room;
+    var initial_room; //sala inicial
     // generate new dungeon
     initial_room = this.dungeon.generate_dungeon(this.number_of_rooms);
     // start RoomState for the initial room of the dungeon
+
+    //this.dungeon.print_grid();
     this.game.state.start("BootState", true, false, this.LEVEL_FILE, "RoomState", {room: initial_room});
 };

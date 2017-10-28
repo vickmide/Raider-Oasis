@@ -1,5 +1,7 @@
 var ProceduralGeneration = ProceduralGeneration || {};
 
+/*Este .js generará la disposición de salas aleatorias*/
+
 ProceduralGeneration.Dungeon = function (game_state) {
     "use strict";
     this.TILE_DIMENSIONS = new Phaser.Point(32, 32);
@@ -7,23 +9,34 @@ ProceduralGeneration.Dungeon = function (game_state) {
     this.game_state = game_state;
 };
 
-ProceduralGeneration.Dungeon.prototype.generate_dungeon = function (number_of_rooms) {
+ProceduralGeneration.Dungeon.prototype.generate_dungeon = function (number_of_rooms) { //con este método generamos las salas
     "use strict";
+    //tamaño del grid              coordinadas de la sala actual            salas creadas                        coordenadas de la sala final                              distancia a la sala inicial
     var grid_size, rooms_to_creates, current_room_coordinate, current_room, created_rooms, initial_room_coordinate, final_room_coordinate, max_distance_to_initial_room, distance_to_initial_room;
+    //             salas a crear                              sala actual               coordenadas de la sala incial                     distancia máxima a la sala inicial                                             
+    
+    
     // initialize the grid
     grid_size = 2 * number_of_rooms;
     this.initialize_grid(grid_size);
 
     // add the middle coordinate as initial
-    initial_room_coordinate = new Phaser.Point((grid_size / 2) - 1, (grid_size / 2) - 1);
+    initial_room_coordinate = new Phaser.Point((grid_size / 2) - 1, (grid_size / 2) - 1); //obtiene las coordenadas de la sala central
     rooms_to_creates = [];
-    rooms_to_creates.push({row: initial_room_coordinate.y, column: initial_room_coordinate.x});
+    rooms_to_creates.push({row: initial_room_coordinate.y, column: initial_room_coordinate.x}); //la introducimos en el array de salas a crear
     created_rooms = [];
     // iterate creating rooms
+
+        //si hay salas para crear     Y       las salas creadas no superan el número que queremos
     while (rooms_to_creates.length > 0 && created_rooms.length < number_of_rooms) {
-        current_room_coordinate = rooms_to_creates.shift();
+        current_room_coordinate = rooms_to_creates.shift(); //coge las coordenadas del array 'salas a crear' y lo almacenamos en 'coordenadas de sala actual'
         // create room with current coordinate
-        current_room = new ProceduralGeneration.Room(this.game_state, current_room_coordinate, this.TILE_DIMENSIONS);
+
+        //creamos la sala mandandole el estado, las coordenadas y el tamaño del tile
+        current_room = new ProceduralGeneration.Room(this.game_state, current_room_coordinate, this.TILE_DIMENSIONS); 
+        
+
+        
         this.grid[current_room_coordinate.row][current_room_coordinate.column] = current_room;
         created_rooms.push(current_room);
         // add random number of neighbors to rooms_to_create
