@@ -6,6 +6,8 @@ ProceduralGeneration.Squarenemy = function (game_state, name, position, properti
 
     this.anchor.setTo(0.5);
     this.game_state.game.physics.arcade.enable(this);
+    this.body.collideWorldBounds = true;
+    
     this.body.immovable = true;
     var gest = new gestures({
         debug: true,
@@ -47,6 +49,9 @@ ProceduralGeneration.Squarenemy.prototype = Object.create(ProceduralGeneration.P
 ProceduralGeneration.Squarenemy.prototype.constructor = ProceduralGeneration.Squarenemy;
 
 ProceduralGeneration.Squarenemy.prototype.update = function () {
+    this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision);
+    
+    
     var distance = this.game.math.distance(this.x, this.y, globalhero.x, globalhero.y);
     var rotation = this.game.math.angleBetween(this.x, this.y, globalhero.x, globalhero.y);
     this.body.velocity.x = Math.cos(rotation) * 90;

@@ -6,7 +6,8 @@ ProceduralGeneration.Enemy = function (game_state, name, position, properties) {
 
     this.anchor.setTo(0.5);
     this.game_state.game.physics.arcade.enable(this);
-    this.body.immovable = true;
+    //this.body.immovable = true;
+    this.body.collideWorldBounds = true;
     var gest = new gestures({
         debug: true,
         draw: true,
@@ -76,7 +77,9 @@ ProceduralGeneration.Enemy.prototype = Object.create(ProceduralGeneration.Prefab
 ProceduralGeneration.Enemy.prototype.constructor = ProceduralGeneration.Enemy;
 
 ProceduralGeneration.Enemy.prototype.update = function () {
-
+    
+    this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision);
+    
     var distance = this.game.math.distance(this.x, this.y, globalhero.x, globalhero.y);
     var rotation = this.game.math.angleBetween(this.x, this.y, globalhero.x, globalhero.y);
     this.body.velocity.x = Math.cos(rotation) * 150;

@@ -6,7 +6,8 @@ ProceduralGeneration.Trienemy = function (game_state, name, position, properties
 
     this.anchor.setTo(0.5);
     this.game_state.game.physics.arcade.enable(this);
-    drawmouse = "";
+    this.body.collideWorldBounds = true;
+
     this.body.immovable = true;
     var gest = new gestures({
         debug: true,
@@ -69,6 +70,9 @@ ProceduralGeneration.Trienemy.prototype = Object.create(ProceduralGeneration.Pre
 ProceduralGeneration.Trienemy.prototype.constructor = ProceduralGeneration.Trienemy;
 
 ProceduralGeneration.Trienemy.prototype.update = function () {
+    this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision);
+    
+    
     var distance = this.game.math.distance(this.x, this.y, globalhero.x, globalhero.y);
     var rotation = this.game.math.angleBetween(this.x, this.y, globalhero.x, globalhero.y);
     this.body.velocity.x = Math.cos(rotation) * 110;
