@@ -1,18 +1,14 @@
 {
     "assets": {
-        "dungeon_tileset": {
-            "type": "image",
-            "source": "assets/images/terrains.png"
-        },
-        "hero_spritesheet": {
-            "type": "spritesheet",
-            "source": "assets/images/dude.png",
-            "frame_width": 32,
-            "frame_height": 42
-        }
+        "dungeon_tileset": {"type": "image", "source": "assets/images/terrains.png"},
+        "hero_spritesheet": {"type": "spritesheet", "source": "assets/images/dude.png", "frame_width": 32, "frame_height": 42},
+        "enemy_image": {"type": "image", "source": "assets/images/star.png"},
+        "exit_image": {"type": "image", "source": "assets/images/portal.png"}
     },
     "groups": [
         "doors",
+        "exits",
+        "enemies",
         "heroes"
-    ]
+    ]    
 }

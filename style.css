@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    padding-top: 65px;
 }
 
 /* Navbar superior (clase de bootstrap) */

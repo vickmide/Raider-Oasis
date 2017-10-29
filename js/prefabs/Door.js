@@ -9,7 +9,7 @@ ProceduralGeneration.Door = function (game_state, name, position, properties) {
     this.direction = properties.direction;
 
     this.game_state.game.physics.arcade.enable(this);
-    this.body.collideWorldBounds = true;
+    this.body.immovable = true;
 };
 
 ProceduralGeneration.Door.prototype = Object.create(ProceduralGeneration.Prefab.prototype);
@@ -23,8 +23,10 @@ ProceduralGeneration.Door.prototype.update = function () {
 ProceduralGeneration.Door.prototype.enter_door = function () {
     "use strict";
     var next_room;
-    // find the next room using the door direction
-    next_room = this.game_state.room.neighbors[this.direction];
-    // start room state for the next room
-    this.game_state.game.state.start("BootState", true, false, "assets/levels/room_level.json", "RoomState", {room: next_room});
+    if (this.game_state.groups.enemies.countLiving() === 0) {
+        // find the next room using the door direction
+        next_room = this.game_state.room.neighbors[this.direction];
+        // start room state for the next room
+        this.game_state.game.state.start("BootState", true, false, "assets/levels/room_level.json", "RoomState", {room: next_room});
+    }
 };
