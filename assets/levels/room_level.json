@@ -3,11 +3,15 @@
         "dungeon_tileset": {"type": "image", "source": "assets/images/terrains.png"},
         "hero_spritesheet": {"type": "spritesheet", "source": "assets/images/dude.png", "frame_width": 32, "frame_height": 42},
         "enemy_image": {"type": "image", "source": "assets/images/star.png"},
+        "trienemy_image": {"type": "image", "source": "assets/images/stargreen.png"},
+        "squarenemy_image": {"type": "image", "source": "assets/images/starpink.png"},
         "exit_image": {"type": "image", "source": "assets/images/portal.png"}
     },
     "groups": [
         "doors",
         "exits",
+        "squarenemies",
+        "trienemies",
         "enemies",
         "heroes"
     ]    

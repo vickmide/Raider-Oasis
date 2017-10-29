@@ -1,7 +1,7 @@
 var ProceduralGeneration = ProceduralGeneration || {};
 
-ProceduralGeneration.Enemy = function (game_state, name, position, properties) {
-   
+ProceduralGeneration.Squarenemy = function (game_state, name, position, properties) {
+
     ProceduralGeneration.Prefab.call(this, game_state, name, position, properties);
 
     this.anchor.setTo(0.5);
@@ -19,34 +19,34 @@ ProceduralGeneration.Enemy = function (game_state, name, position, properties) {
     });
     
     gest.addGesture("Line", [ {x: 0, y: 0},{x: 0, y: 100}], callback);
-
+    
     gest.addGesture("Square", [
-		{x: 0, y: 0},
-		{x: 200, y: 0},
-		{x: 200, y: 200},
-		{x: 0, y: 200},
-		{x: 0, y: 0}
+            {x: 0, y: 0},
+            {x: 200, y: 0},
+            {x: 200, y: 200},
+            {x: 0, y: 200},
+            {x: 0, y: 0}
     ], callback);
-
+    
 	gest.addGesture("Check", [
 		{x: 0, y: 0},
 		{x: 50, y: 50},
 		{x: 100, y: 0},
 	], callback);
-
-    enemytokill = this;
+    
+    squarenemytokill = this;
     function callback(name){
         gest.clear();
-        if (name=="Line"){
-            enemytokill.kill();
+        if (name=="Square"){
+            squarenemytokill.kill();
         }
     }
 };
 
-ProceduralGeneration.Enemy.prototype = Object.create(ProceduralGeneration.Prefab.prototype);
-ProceduralGeneration.Enemy.prototype.constructor = ProceduralGeneration.Enemy;
+ProceduralGeneration.Squarenemy.prototype = Object.create(ProceduralGeneration.Prefab.prototype);
+ProceduralGeneration.Squarenemy.prototype.constructor = ProceduralGeneration.Squarenemy;
 
-ProceduralGeneration.Enemy.prototype.update = function () {
+ProceduralGeneration.Squarenemy.prototype.update = function () {
 
 
 }; 

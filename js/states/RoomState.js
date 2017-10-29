@@ -15,6 +15,8 @@ ProceduralGeneration.RoomState = function () {
         "hero": ProceduralGeneration.Hero.prototype.constructor,
         "door": ProceduralGeneration.Door.prototype.constructor,
         "enemy": ProceduralGeneration.Enemy.prototype.constructor,
+        "trienemy": ProceduralGeneration.Trienemy.prototype.constructor,
+        "squarenemy": ProceduralGeneration.Squarenemy.prototype.constructor,
         "exit": ProceduralGeneration.Exit.prototype.constructor
     };
 };

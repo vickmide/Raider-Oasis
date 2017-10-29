@@ -9,13 +9,34 @@
     },
     "prefabs": {
         "enemies": {
-            "number": {"min": 1, "max": 3},
+            "number": {"min": 0, "max": 1},
             "possible_prefabs": [
                 {
                     "prefab": "enemy",
                     "properties": {"texture": "enemy_image", "group": "enemies"}
                 }
             ]
+        },
+        "trienemies": {
+            "number": {"min": 0, "max": 1},
+            "possible_prefabs": [
+                {
+                    "prefab": "trienemy",
+                    "properties": {"texture": "trienemy_image", "group": "trienemies"}
+                }
+            ]
+        },
+        "squarenemies": {
+            "number": {"min": 0, "max": 1},
+            "possible_prefabs": [
+                {
+                    "prefab": "squarenemy",
+                    "properties": {"texture": "squarenemy_image", "group": "squarenemies"}
+                }
+            ]
         }
-    }
+   }
 }
+
+               
+             
