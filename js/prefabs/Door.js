@@ -23,7 +23,9 @@ ProceduralGeneration.Door.prototype.update = function () {
 ProceduralGeneration.Door.prototype.enter_door = function () {
     "use strict";
     var next_room;
-    if (this.game_state.groups.enemies.countLiving() === 0) {
+    if (this.game_state.groups.enemies.countLiving() === 0 &&
+    this.game_state.groups.trienemies.countLiving() === 0 &&
+    this.game_state.groups.squarenemies.countLiving() === 0    ) {
         // find the next room using the door direction
         next_room = this.game_state.room.neighbors[this.direction];
         // start room state for the next room

@@ -1,13 +1,12 @@
 var ProceduralGeneration = ProceduralGeneration || {};
 
 ProceduralGeneration.Hero = function (game_state, name, position, properties) {
-    "use strict";
     ProceduralGeneration.Prefab.call(this, game_state, name, position, properties);
     
     this.anchor.setTo(0.5);
     
     this.walking_speed = +properties.walking_speed;
-
+    
     this.game_state.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
     
@@ -15,13 +14,14 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
     this.animations.add("down", 4, 1, true);
     this.scale.setTo(0.9, 0.9);
     this.cursors = this.game_state.game.input.keyboard.createCursorKeys();
+
+    globalhero = this;
 };
 
 ProceduralGeneration.Hero.prototype = Object.create(ProceduralGeneration.Prefab.prototype);
 ProceduralGeneration.Hero.prototype.constructor = ProceduralGeneration.Hero;
 
 ProceduralGeneration.Hero.prototype.update = function () {
-    "use strict";
     
      
      this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision);

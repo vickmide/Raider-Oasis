@@ -69,6 +69,8 @@ ProceduralGeneration.Trienemy.prototype = Object.create(ProceduralGeneration.Pre
 ProceduralGeneration.Trienemy.prototype.constructor = ProceduralGeneration.Trienemy;
 
 ProceduralGeneration.Trienemy.prototype.update = function () {
-
-
+    var distance = this.game.math.distance(this.x, this.y, globalhero.x, globalhero.y);
+    var rotation = this.game.math.angleBetween(this.x, this.y, globalhero.x, globalhero.y);
+    this.body.velocity.x = Math.cos(rotation) * 110;
+    this.body.velocity.y = Math.sin(rotation) * 110;
 };

@@ -47,8 +47,10 @@ ProceduralGeneration.Squarenemy.prototype = Object.create(ProceduralGeneration.P
 ProceduralGeneration.Squarenemy.prototype.constructor = ProceduralGeneration.Squarenemy;
 
 ProceduralGeneration.Squarenemy.prototype.update = function () {
-
-
+    var distance = this.game.math.distance(this.x, this.y, globalhero.x, globalhero.y);
+    var rotation = this.game.math.angleBetween(this.x, this.y, globalhero.x, globalhero.y);
+    this.body.velocity.x = Math.cos(rotation) * 90;
+    this.body.velocity.y = Math.sin(rotation) * 90;
 }; 
 
 
