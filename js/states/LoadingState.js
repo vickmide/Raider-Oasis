@@ -18,12 +18,11 @@ ProceduralGeneration.LoadingState.prototype.init = function (level_data, next_st
 ProceduralGeneration.LoadingState.prototype.preload = function () {
     "use strict";
     var assets //almacena todos los assets del JSON
-    var asset_loader
     var asset_key //el identificador de cada asset
-    var asset;
+    var asset; //variable auxiliar
 
     assets = this.level_data.assets; 
-    for (asset_key in assets) { // load assets according to asset key
+    for (asset_key in assets) { // 
         if (assets.hasOwnProperty(asset_key)) {//si el asset tiene la propiedad indicada... (es decir, si tiene identificador)
             asset = assets[asset_key]; //almaceno dicho asset en la variable auxiliar asset
             switch (asset.type) { //esto para los distintos tipos de assets que puedan surgir, si creamos más, los añadimos aquí

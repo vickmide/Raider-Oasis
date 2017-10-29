@@ -11,8 +11,8 @@ ProceduralGeneration.BootState.prototype.constructor = ProceduralGeneration.Boot
 ProceduralGeneration.BootState.prototype.init = function (level_file, next_state, extra_parameters) {
     "use strict";
     this.level_file = level_file; //Donde se encuentra el archivo JSON
-    this.next_state = next_state;
-    this.extra_parameters = extra_parameters;
+    this.next_state = next_state; //Roomstate
+    this.extra_parameters = extra_parameters; //sala inicial
 };
 
 ProceduralGeneration.BootState.prototype.preload = function () {
@@ -20,7 +20,6 @@ ProceduralGeneration.BootState.prototype.preload = function () {
     this.load.text("level1", this.level_file);  //el identificador del archivo JSON y donde se aloja.
     // Esta instrucción carga el texto del JSON
 };
-
 
 /*Accedemos al texto del archivo JSON con el identificaddor level1
 En level_text almacenamos el texto JSON accediendo a la caché de Phaser (?) con el identificador level1
@@ -31,7 +30,7 @@ limpia el mundo (?), no limpiamos la caché y le mandamos los parámetros que no
 ProceduralGeneration.BootState.prototype.create = function () { 
     "use strict";
     var level_text, level_data;
-    level_text = this.game.cache.getText("level1"); 
+    level_text = this.game.cache.getText("level1"); //añade al cache del juego
     level_data = JSON.parse(level_text);
     this.game.state.start("LoadingState", true, false, level_data, this.next_state, this.extra_parameters);
 };

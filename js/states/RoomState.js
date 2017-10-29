@@ -1,8 +1,9 @@
 var ProceduralGeneration = ProceduralGeneration || {};
 
+//Constructor RoomState
 ProceduralGeneration.RoomState = function () {
     "use strict";
-    Phaser.State.call(this);
+    Phaser.State.call(this); //llama al constructor del padre
     
 
     //keys o identificadores para usar cuando creemos el mapa y el tileset
@@ -24,13 +25,15 @@ ProceduralGeneration.RoomState.prototype.constructor = ProceduralGeneration.Room
 ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_parameters) {
     "use strict";
     var tileset_index, tile_dimensions;
+    //Si existen ya datos de nivel, no se cargan de nuevo.
     this.level_data = this.level_data || level_data;
     
-    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL; //configura la escala del canvas
+    //Escala el canvas y lo posiciona en pantalla
+    this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE; //configura la escala del canvas
     this.scale.pageAlignHorizontally = true; //alinea horizontalmente con el padre contenedor o ventana
     this.scale.pageAlignVertically = true; //alinea verticalmente con el padre contenedor o ventana
     
-    // start physics system
+    //Configura fisicas
     this.game.physics.startSystem(Phaser.Physics.ARCADE); //sigue la física tipo ARCADE
     this.game.physics.arcade.gravity.y = 0; //gravedad en y = 0
     
@@ -38,40 +41,41 @@ ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_para
     this.room = extra_parameters.room;
 };
 
-ProceduralGeneration.RoomState.prototype.preload = function () { //carga un mapa según el nombre de la sala
+//carga un mapa según el nombre de la sala
+ProceduralGeneration.RoomState.prototype.preload = function () { 
     "use strict";
     this.load.tilemap(this.MAP_KEY, "assets/maps/" + this.room.template_name(), null, Phaser.Tilemap.TILED_JSON);
 };
 
+//Funcion create override de phaser, visualiza el mapa, crea grupos y añade prefabs
 ProceduralGeneration.RoomState.prototype.create = function () {
     "use strict";
     var group_name, object_layer, collision_tiles;
     // Crea el mapa
     this.map = this.game.add.tilemap(this.MAP_KEY); //crea el tilemap, que son los índices que indican cada tile a usar
-    
     this.map.addTilesetImage(//añade una imagen al mapa para ser usada como tileset
                             this.map.tilesets[0].name,  //nombre del tileset como se especifica en los datos del mapa
                             this.MAP_TILESET);          //key
                           
-    // create map layers (AQUÍ PASAN COSAS MUY RARAS)
+    // Crea mapa de layers 
     this.layers = {};
     this.map.layers.forEach(function (layer) {
         this.layers[layer.name] = this.map.createLayer(layer.name);
-        if (layer.properties.collision) { // collision layer
+        
+        if (layer.properties.collision) { // layer de colision
             collision_tiles = [];
-            layer.data.forEach(function (data_row) { // find tiles used in the layer
+            layer.data.forEach(function (data_row) { // Busca los tiles usados en el layer
+               
                 data_row.forEach(function (tile) {
-                    // check if it's a valid tile index and isn't already in the list
+                    // Comprueba si es un tile valido y si no esta en la lista
                     if (tile.index > 0 && collision_tiles.indexOf(tile.index) === -1) {
-                        collision_tiles.push(tile.index);
+                        collision_tiles.push(tile.index);    
                     }
                 }, this);
             }, this);
             this.map.setCollision(collision_tiles, true, layer.name);
         }
     }, this);
-    // resize the world to be the size of the current layer
-    this.layers[this.map.layer.name].resizeWorld();
     
     // create groups
     this.groups = {};
@@ -81,24 +85,25 @@ ProceduralGeneration.RoomState.prototype.create = function () {
     
     this.prefabs = {};
     
-    // create objects (prefabs)
+    // crea objects (prefabs)
     for (object_layer in this.map.objects) {
         if (this.map.objects.hasOwnProperty(object_layer)) {
-            // create layer objects
+            // crea layer objects
             this.map.objects[object_layer].forEach(this.create_object, this);
         }
     }
 };
 
+//Crea los diferentes objetos en la escena (doors, enemies, players...)
 ProceduralGeneration.RoomState.prototype.create_object = function (object) {
     "use strict";
-    var object_y, position, prefab;
-    // tiled coordinates starts in the bottom left corner
-    object_y = (object.gid) ? object.y - (this.map.tileHeight / 2) : object.y + (object.height / 2);
-    position = {"x": object.x + (this.map.tileHeight / 2), "y": object_y};
-    // create object according to its type
+    var position, prefab;
+    
+    position = {"x": object.x , "y": object.y};
+    // Crea objetos acorde a su tipo
     if (this.prefab_classes.hasOwnProperty(object.type)) {
         prefab = new this.prefab_classes[object.type](this, object.name, position, object.properties);
     }
+
     this.prefabs[object.name] = prefab;
 };
