@@ -63,7 +63,7 @@ Por último, la pestaña “About” redireccionará a una pantalla con informac
 Respecto al código, se usaron dos bibliotecas externas para implementar dos aspectos que se querían tener en cuenta en este proyecto: detección de formas mediante dibujo de líneas en el canvas, y creación de mapas procedurales (mazmorras con salas dispuestas de manera aleatoria).
 
 ![Ejemplo Pantalla PLay](Pantallas/Estructura.png)
-![Ejemplo Diagrama de pantallas](Pantallas/diagrama.png)
+![Ejemplo Diagrama de pantallas](Pantallas/diagrama.jpg)
 El proyecto se divide en varias carpetas:
 - Assets: contiene las imágenes que se usarán como el spritesheet del personaje principal y el tileset del mapa. También contiene         el archivo JSON para cargar los assets y los distintos archivos JSON de todos los posibles mapas que puedan ser generados. En           dichos documentos se guarda información como los tiles a usar, las colisiones, las posiciones de las puertas, del protagonista,         del enemigo, etc.
 
