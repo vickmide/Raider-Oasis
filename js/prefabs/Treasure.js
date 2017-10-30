@@ -18,9 +18,8 @@ ProceduralGeneration.Treasure.prototype.constructor = ProceduralGeneration.Treas
 ProceduralGeneration.Treasure.prototype.update = function () {
 
     if(this.game_state.game.physics.arcade.overlap(this, this.game_state.groups.heroes, this.kill, null, this)){
-        console.log("antes: " + score);
+
         score = score + 100;
-        console.log("despues: " + score);
         scoreText.text = "score: " + score;
     }
 };

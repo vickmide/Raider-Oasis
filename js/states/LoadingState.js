@@ -46,6 +46,13 @@ ProceduralGeneration.LoadingState.prototype.preload = function () {
             }
         }
     }
+    //carga las vidas
+    this.load.image("fullLife", "/assets/images/life5.png");
+    this.load.image("fourLife", "/assets/images/life4.png");
+    this.load.image("threeLife", "/assets/images/life3.png");
+    this.load.image("twoLife", "/assets/images/life2.png");
+    this.load.image("oneLife", "/assets/images/life1.png");
+    this.load.image("dead", "/assets/images/dead.png");
 };
 
 //Override de metodo create de superclase

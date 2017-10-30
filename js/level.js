@@ -159,7 +159,6 @@ function collectStar(player, star) {
 }
 function moveEnemy () {
     var rand = Math.floor(Math.random()*4)+1
-    //console.log(rand);
     if (rand == 1) {
         enemy.body.velocity.y = -250;
         

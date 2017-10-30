@@ -21,7 +21,6 @@ ProceduralGeneration.Door.prototype.update = function () {
 };
 
 ProceduralGeneration.Door.prototype.enter_door = function () {
-    console.log(score + "esta es la puntuacion antes");
     var next_room;
     if (this.game_state.groups.enemies.countLiving() === 0 &&
     this.game_state.groups.trienemies.countLiving() === 0 &&

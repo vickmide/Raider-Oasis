@@ -43,9 +43,8 @@ ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_para
     this.game.physics.arcade.gravity.y = 0;
 
     //Obtiene la sala inicial
-    console.log(extra_parameters);
     this.room = extra_parameters.room;
-    //console.log("LA VERDAD: " + this.score);
+
     this.score = score || 0;
     this.life = life || 0;
 };
@@ -105,7 +104,7 @@ ProceduralGeneration.RoomState.prototype.create = function () {
     //Añade texto con score
     scoreText = game.add.text(480, 10, 'score: ' + this.score, { fontSize: '20px', fill: '#000' });
     //Añade texto con life
-    lifeText = game.add.text(16, 10, 'life: ' + this.life, { fontSize: '20px', fill: '#000' });
+   
 };
 
 //Crea los diferentes objetos en la escena (doors, enemies, players...)k

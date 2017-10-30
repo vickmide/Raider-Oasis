@@ -26,12 +26,25 @@ ProceduralGeneration.Hero.prototype.update = function () {
      this.game_state.game.physics.arcade.overlap(this, this.game_state.groups.trienemies, null, null, this) ||
          this.game_state.game.physics.arcade.overlap(this, this.game_state.groups.squarenemies, null, null, this)){
         life = life - 1;
-        lifeText.text = "life: " + life;
+        
+        
         if (life <= 0){
             game.state.start("GameOverState", true, false, score);
         }
     }   
-     
+     if(life >= 500){
+            player = game.add.sprite(20, 20, 'fullLife');
+        }else if(life > 400){
+            player = game.add.sprite(20, 20, 'fourLife');
+        }else if(life > 300){
+            player = game.add.sprite(20, 20, 'threeLife');
+        }else if(life > 200){
+            player = game.add.sprite(20, 20, 'twoLife');
+        }else if(life > 100){
+            player = game.add.sprite(20, 20, 'oneLife');
+        }else if(life > 0){
+            player = game.add.sprite(20, 20, 'dead');
+        }
      if(this.cursors.up.isDown)
      {
         this.body.velocity.y = -this.walking_speed;
