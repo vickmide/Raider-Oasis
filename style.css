@@ -8,7 +8,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    padding-top: 65px;
 }
 
 /* Navbar superior (clase de bootstrap) */
@@ -97,6 +96,7 @@ h2 {
 /* Div que contiene el formulario de login */
 .login-box {
     max-width: 20em;
+    margin-top: 100px;
     display: block;
     margin: auto;
     color: #ffffff;
