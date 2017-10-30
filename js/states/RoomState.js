@@ -37,6 +37,9 @@ ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_para
     this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
     this.scale.pageAlignHorizontally = true;
     this.scale.pageAlignVertically = true;
+    //Configuración del renderizado de imagenes para que no se difuminen
+    game.renderer.renderSession.roundPixels = true;  
+    Phaser.Canvas.setImageRenderingCrisp(this.game.canvas);
 
     //Configura fisicas
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
