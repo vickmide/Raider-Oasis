@@ -62,6 +62,8 @@ Por último, la pestaña “About” redireccionará a una pantalla con informac
 
 Respecto al código, se usaron dos bibliotecas externas para implementar dos aspectos que se querían tener en cuenta en este proyecto: detección de formas mediante dibujo de líneas en el canvas, y creación de mapas procedurales (mazmorras con salas dispuestas de manera aleatoria).
 
+![Ejemplo Pantalla PLay](Pantallas/Estructura.png)
+
 El proyecto se divide en varias carpetas:
 - Assets: contiene las imágenes que se usarán como el spritesheet del personaje principal y el tileset del mapa. También contiene         el archivo JSON para cargar los assets y los distintos archivos JSON de todos los posibles mapas que puedan ser generados. En           dichos documentos se guarda información como los tiles a usar, las colisiones, las posiciones de las puertas, del protagonista,         del enemigo, etc.
 
@@ -80,7 +82,6 @@ El proyecto se divide en varias carpetas:
 En la raíz de esta carpeta se encuentran el main.js donde se inicializarán todos los estados y la documentación de phaser que           se ha utilizado.
         
 En la raíz de la carpeta principal del proyecto están los documentos de formato html que tienen que ver con el desarrollo y diseño de la web y el index.html para iniciar la aplicación. Asimismo, se incorpora este mismo archivo README.md, con la especificación de licencias de librerías que se han usado y la hoja de estilos.css
-
 
 
 
