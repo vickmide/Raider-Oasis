@@ -142,9 +142,9 @@ ProceduralGeneration.Room.prototype.find_free_region = function (size_in_tiles) 
     "use strict";
     var center_tile, region, x_coordinate, y_coordinate, initial_x_coordinate, initial_y_coordinate;
     do {
-        //Calcula el centro de la sala en filas y columnas
-        center_tile = new Phaser.Point(this.game_state.game.rnd.between(2, (this.game_state.game.world.width / this.tile_dimensions.x) - 3),
-            this.game_state.game.rnd.between(2, (this.game_state.game.world.height / this.tile_dimensions.y) - 3));
+        //Calcula el centro de la sala en filas y columnas !! no es el centro de la sala, es el centro del obstáculo
+        center_tile = new Phaser.Point(this.game_state.game.rnd.between(3, (this.game_state.game.world.width / this.tile_dimensions.x) - 4),
+            this.game_state.game.rnd.between(3, (this.game_state.game.world.height / this.tile_dimensions.y) - 4));
         region = [center_tile];
         initial_x_coordinate = center_tile.x - Math.floor(size_in_tiles.x / 2);
         initial_y_coordinate = center_tile.y - Math.floor(size_in_tiles.y / 2);
