@@ -1,7 +1,4 @@
 # RAIDER OASIS
-
-# Fase 1
-
 ## Descripción general
 Juego multijugador online de aventura y rol. Ambientación basada en la exploración de ruinas egipcias donde el jugador deberá colaborar o competir con otros jugadores para derrotar a enemigos y conseguir valiosos tesoros.
 ## Mecánicas
@@ -36,55 +33,6 @@ Por otro lado, las partidas se organizarán en diferentes salas de jugadores, do
 - El sistema soportará la existencia de diferentes salas para alojar partidas de jugadores. Dichas salas podrán ser tanto privadas (con un nombre y contraseña) como publicas, donde los jugadores se eligen de forma aleatoria.
 - El sistema será capaz de responder a los diferentes tipos de navegares, adaptandose al dispositivo (responsive).
 - Resto de requisitos necesarios para el desarrollo correcto de una partida como la descrita en este documento. Enfásis posterior de dichas carácterísticas en el documento de diseño de la Fase 2 del proyecto.
-
-# Fase 2
-
-## Pantallas
-
-Desde cualquier pantalla se podrá acceder a todas las que se muestran en la cabecera de la página, que son: Home, Play, Profile, LeaderBoards y About
-
-Al iniciar la aplicación, lo primero que se mostrará será la pantalla “Home”, que es la pantalla de registro del el usuario. Esta parte se implementará en la fase 3 de la práctica y por eso ahora mismo no se encuentra funcional. 
-
-![Ejemplo Pantalla PLay](Pantallas/PantallaLogin.png)
-
-En “Play!” se ejecutará el script que contiene el videojuego programado con Phaser.
-
-![Ejemplo Pantalla PLay](Pantallas/PantallaPlay.png)
-
-“Profile” y “LeaderBoards” permanecen inactivas ya que son pantallas que no se encuentran disponibles por el momento debido a la misma razón por la que el registro de “Home” no es funcional, y es que serán implementadas en fases posteriores.
-
-Por último, la pestaña “About” redireccionará a una pantalla con información variada sobre nosotros y el juego desarrollado para la asignatura.
-
-
-![Ejemplo Pantalla PLay](Pantallas/PantallaAboutUs.png)
-
-## Estructuración del código
-
-Respecto al código, se usaron dos bibliotecas externas para implementar dos aspectos que se querían tener en cuenta en este proyecto: detección de formas mediante dibujo de líneas en el canvas, y creación de mapas procedurales (mazmorras con salas dispuestas de manera aleatoria).
-
-![Ejemplo Pantalla PLay](Pantallas/Estructura.png)
-
-El proyecto se divide en varias carpetas:
-- Assets: contiene las imágenes que se usarán como el spritesheet del personaje principal y el tileset del mapa. También contiene         el archivo JSON para cargar los assets y los distintos archivos JSON de todos los posibles mapas que puedan ser generados. En           dichos documentos se guarda información como los tiles a usar, las colisiones, las posiciones de las puertas, del protagonista,         del enemigo, etc.
-
-- Img: Imágenes usadas en el código HTML para el diseño de la web. Contiene la imagen 	del cielo y de la ciudad.
-
-- Js:  Aquí están los archivos javascript que son usados en el desarrollo del juego. Esta carpeta se subdivide en otras para poder         establecer una mejor estructuración:
-
-* Dungeon: El código de esta carpeta sirve para la generación de la mazmorra.
-
-* Gestures: Esta es la biblioteca importada para el uso de detección de formas en el canvas.
-
-* Prefabs: Información correspondiente a los elementos del juego: el personaje, las puertas de cada sala y una “clase” objeto             padre de la que heredan.
-
-* States: Los distintos estados de Phaser que serán llamados para la ejecución del juego
-        
-En la raíz de esta carpeta se encuentran el main.js donde se inicializarán todos los estados y la documentación de phaser que           se ha utilizado.
-        
-En la raíz de la carpeta principal del proyecto están los documentos de formato html que tienen que ver con el desarrollo y diseño de la web y el index.html para iniciar la aplicación. Asimismo, se incorpora este mismo archivo README.md, con la especificación de licencias de librerías que se han usado y la hoja de estilos.css
-
-
-
 
 ## Equipo de desarrollo
 

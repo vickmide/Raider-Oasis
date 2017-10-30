@@ -15,10 +15,12 @@ ProceduralGeneration.DungeonState.prototype.constructor = ProceduralGeneration.D
 
 //Override init de la superclase
 //number_of_rooms se recibe de main.js 
-ProceduralGeneration.DungeonState.prototype.init = function (number_of_rooms) {
+ProceduralGeneration.DungeonState.prototype.init = function (number_of_rooms, score, life) {
     "use strict";
     this.number_of_rooms = number_of_rooms;
     this.dungeon = this.dungeon || new ProceduralGeneration.Dungeon(this);
+    this.score = score || 0;
+    this.life = life || 0;
 };
 
 //Override de preload de la superclase
@@ -42,5 +44,5 @@ ProceduralGeneration.DungeonState.prototype.create = function () {
     */
     this.game.state.start("BootState", true, false, this.LEVEL_FILE, "RoomState", {
         room: initial_room
-    });
+    }, this.score, this.life);
 };

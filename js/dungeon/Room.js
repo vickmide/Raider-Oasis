@@ -125,6 +125,7 @@ ProceduralGeneration.Room.prototype.populate_prefabs = function (number_of_prefa
         position = new Phaser.Point((tile_position[0].x * this.tile_dimensions.x) + (this.tile_dimensions.x / 2),
             (tile_position[0].y * this.tile_dimensions.y) + (this.tile_dimensions.y / 2));
         properties = prefab_data.properties;
+
         //Añade el prebab a la lista de prefabs
         this.prefabs.push({
             name: prefab + index,

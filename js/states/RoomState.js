@@ -17,7 +17,8 @@ ProceduralGeneration.RoomState = function () {
         "enemy": ProceduralGeneration.Enemy.prototype.constructor,
         "trienemy": ProceduralGeneration.Trienemy.prototype.constructor,
         "squarenemy": ProceduralGeneration.Squarenemy.prototype.constructor,
-        "exit": ProceduralGeneration.Exit.prototype.constructor
+        "exit": ProceduralGeneration.Exit.prototype.constructor,
+        "treasure": ProceduralGeneration.Treasure.prototype.constructor,
     };
 };
 
@@ -27,8 +28,7 @@ ProceduralGeneration.RoomState.prototype = Object.create(Phaser.State.prototype)
 ProceduralGeneration.RoomState.prototype.constructor = ProceduralGeneration.RoomState;
 
 //Override del metodo init de superclase
-ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_parameters) {
-    "use strict";
+ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_parameters, score, life) {
     var tileset_index, tile_dimensions;
     //Si existen ya datos de nivel, no se cargan de nuevo.
     this.level_data = this.level_data || level_data;
@@ -43,7 +43,11 @@ ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_para
     this.game.physics.arcade.gravity.y = 0;
 
     //Obtiene la sala inicial
+    console.log(extra_parameters);
     this.room = extra_parameters.room;
+    //console.log("LA VERDAD: " + this.score);
+    this.score = score || 0;
+    this.life = life || 0;
 };
 
 //Carga un mapa según el nombre de la sala
@@ -55,7 +59,7 @@ ProceduralGeneration.RoomState.prototype.preload = function () {
 //Override del metodo create de la superclase
 //Visualiza el mapa, crea grupos, añade prefabs
 ProceduralGeneration.RoomState.prototype.create = function () {
-    "use strict";
+
     var group_name, object_layer, collision_tiles, new_prefab;
 
     //Crea el tilemap, son los índices que indican cada tile a usar
@@ -97,6 +101,11 @@ ProceduralGeneration.RoomState.prototype.create = function () {
     this.room.prefabs.forEach(function (prefab) {
         new_prefab = new this.prefab_classes[prefab.prefab](this, prefab.name, prefab.position, prefab.properties);
     }, this);
+
+    //Añade texto con score
+    scoreText = game.add.text(480, 10, 'score: ' + this.score, { fontSize: '20px', fill: '#000' });
+    //Añade texto con life
+    lifeText = game.add.text(16, 10, 'life: ' + this.life, { fontSize: '20px', fill: '#000' });
 };
 
 //Crea los diferentes objetos en la escena (doors, enemies, players...)k

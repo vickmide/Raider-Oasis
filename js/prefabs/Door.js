@@ -21,7 +21,7 @@ ProceduralGeneration.Door.prototype.update = function () {
 };
 
 ProceduralGeneration.Door.prototype.enter_door = function () {
-    "use strict";
+    console.log(score + "esta es la puntuacion antes");
     var next_room;
     if (this.game_state.groups.enemies.countLiving() === 0 &&
     this.game_state.groups.trienemies.countLiving() === 0 &&
@@ -29,6 +29,6 @@ ProceduralGeneration.Door.prototype.enter_door = function () {
         // find the next room using the door direction
         next_room = this.game_state.room.neighbors[this.direction];
         // start room state for the next room
-        this.game_state.game.state.start("BootState", true, false, "assets/levels/room_level.json", "RoomState", {room: next_room});
+        this.game_state.game.state.start("BootState", true, false, "assets/levels/room_level.json", "RoomState", {room: next_room}, score,life);
     }
 };

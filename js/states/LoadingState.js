@@ -12,11 +12,13 @@ ProceduralGeneration.LoadingState.prototype = Object.create(Phaser.State.prototy
 ProceduralGeneration.LoadingState.prototype.constructor = ProceduralGeneration.LoadingState;
 
 //Override del metodo Init de la superclase
-ProceduralGeneration.LoadingState.prototype.init = function (level_data, next_state, extra_parameters) {
+ProceduralGeneration.LoadingState.prototype.init = function (level_data, next_state, extra_parameters, score, life) {
     "use strict";
     this.level_data = level_data; //Datos JSON
     this.next_state = next_state; //Contexto para RoomState
     this.extra_parameters = extra_parameters; //Resto de parametros: sala inicial
+    this.score = score || 0;
+    this.life = life || 0;
 };
 
 //Override del metodo preload de la superclase
@@ -51,5 +53,5 @@ ProceduralGeneration.LoadingState.prototype.create = function () {
     "use strict";
     //Se transita al siguiente estado (roomstate)
     //Se envia junto a los datos JSON y los parametros extra: sala inicial
-    this.game.state.start(this.next_state, true, false, this.level_data, this.extra_parameters);
+    this.game.state.start(this.next_state, true, false, this.level_data, this.extra_parameters, this.score, this.life);
 };

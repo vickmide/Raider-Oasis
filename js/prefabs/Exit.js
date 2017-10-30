@@ -24,6 +24,7 @@ ProceduralGeneration.Exit.prototype.reach_exit = function () {
     "use strict";
     if (this.game_state.groups.enemies.countLiving() === 0) {
         // restart the game
-        this.game_state.game.state.start("DungeonState", true, false, 10);
+          this.game_state.game.state.start("WinState", true, false, score);
+        //this.game_state.game.state.start("DungeonState", true, false, 10);
     }
 };
