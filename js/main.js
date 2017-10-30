@@ -3,7 +3,8 @@
 var ProceduralGeneration = ProceduralGeneration || {};
 
 //Crea el objeto juego
-var game = new Phaser.Game(600, 600, Phaser.CANVAS, "canvas-juego");
+var game = new Phaser.Game(704, 704, Phaser.CANVAS, "canvas-juego");
+
 score = 0;
 life = 500;
 //Añade estados al juego

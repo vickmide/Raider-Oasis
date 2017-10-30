@@ -5,7 +5,7 @@ var ProceduralGeneration = ProceduralGeneration || {};
 //Constructor para Dungeon
 ProceduralGeneration.Dungeon = function (game_state) {
     "use strict";
-    this.TILE_DIMENSIONS = new Phaser.Point(40, 40);
+    this.TILE_DIMENSIONS = new Phaser.Point(64, 64);
 
     this.game_state = game_state;
 };

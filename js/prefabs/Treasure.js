@@ -5,7 +5,7 @@ ProceduralGeneration.Treasure = function (game_state, name, position, properties
     ProceduralGeneration.Prefab.call(this, game_state, name, position, properties);
 
     this.anchor.setTo(0.5);
-    this.scale.setTo(0.9, 0.9);
+    //this.scale.setTo(0.9, 0.9);
     this.game_state.game.physics.arcade.enable(this);
     //this.body.immovable = true;
     this.body.collideWorldBounds = true;

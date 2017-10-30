@@ -11,7 +11,6 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
     this.body.collideWorldBounds = true;
     
     this.animations.add("walking", [1, 2, 3, 4], 6, true);
-    this.scale.setTo(0.6, 0.6);
     this.cursors = this.game_state.game.input.keyboard.createCursorKeys();
     globalhero = this;
 };
@@ -50,12 +49,12 @@ ProceduralGeneration.Hero.prototype.update = function () {
      if(this.cursors.up.isDown)
      {
         this.body.velocity.y = -this.walking_speed;
+        this.scale.x = 1;
         this.animations.play("walking");
-        this.scale.setTo(0.6, 0.6);
      } else if(this.cursors.down.isDown)
      {
         this.body.velocity.y = +this.walking_speed;
-        this.scale.setTo(-0.6, 0.6); 
+        this.scale.x = -1;
         this.animations.play("walking"); 
      }
 
@@ -63,12 +62,12 @@ ProceduralGeneration.Hero.prototype.update = function () {
      if(this.cursors.left.isDown)
      {
         this.body.velocity.x = -this.walking_speed;
-        this.scale.setTo(0.6, 0.6);
+        this.scale.x = 1;
         this.animations.play("walking"); 
      } else if(this.cursors.right.isDown)
      {
         this.body.velocity.x = +this.walking_speed;
-        this.scale.setTo(-0.6, 0.6);  
+        this.scale.x = -1;
         this.animations.play("walking"); 
      }
      

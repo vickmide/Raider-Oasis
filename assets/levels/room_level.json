@@ -1,6 +1,6 @@
 {
     "assets": {
-        "dungeon_tileset": {"type": "image", "source": "assets/images/terrains.png"},
+        "dungeon_tileset": {"type": "image", "source": "assets/images/tileset.png"},
         "hero_spritesheet": {"type": "spritesheet", "source": "assets/images/player.png", "frame_width": 38, "frame_height": 58},
         "enemy_image": {"type": "image", "source": "assets/images/enemigo-linea.png"},
         "trienemy_image": {"type": "image", "source": "assets/images/enemigo-check.png"},
