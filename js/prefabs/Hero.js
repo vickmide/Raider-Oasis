@@ -10,17 +10,17 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
         if (last_door == "S") {
             this.x = (6 * tile_size) - offset_x;
             this.y = (3 * tile_size) - offset_y;
-            this.scale.x = -1;
+            //this.scale.x = -1;
         } else if (last_door == "N") {
             this.x = (6 * tile_size) - offset_x;
-            this.y = (8 * tile_size) + offset_y*4;
+            this.y = (8 * tile_size) + offset_y + 4;
         } else if (last_door == "W") {
             this.x = (8 * tile_size) + offset_x;
             this.y = (6 * tile_size) - offset_y + 5;
         } else if (last_door == "E") {
             this.x = (3 * tile_size) - offset_x;
             this.y = (6 * tile_size) - offset_y + 10;
-            this.scale.x = -1;
+            //this.scale.x = -1;
         }
     // El anchor del sprite es necesario que esté a los pies del personaje, para que no se "suba por encima" de los obstáculos al chocarse desde arriba
     this.anchor.setTo(0.5, 1); // x = mitad del sprite, y = abajo del todo del sprite
