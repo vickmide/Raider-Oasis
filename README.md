@@ -49,7 +49,7 @@ Al iniciar la aplicación, lo primero que se mostrará será la pantalla “Home
 
 En “Play!” se ejecutará el script que contiene el videojuego programado con Phaser.
 
-![Ejemplo Pantalla PLay](Pantallas/PantallaPlay.png)
+![Ejemplo Pantalla PLay](Pantallas/PantallaPlay.jpg)
 
 “Profile” y “LeaderBoards” permanecen inactivas ya que son pantallas que no se encuentran disponibles por el momento debido a la misma razón por la que el registro de “Home” no es funcional, y es que serán implementadas en fases posteriores.
 
