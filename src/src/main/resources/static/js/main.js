@@ -1,0 +1,22 @@
+//Crea objeto proceduralgeneration 
+//para generación de mazmorras aleatorias
+var ProceduralGeneration = ProceduralGeneration || {};
+
+//Crea el objeto juego
+var game = new Phaser.Game(704, 704, Phaser.CANVAS, "canvas-juego");
+
+score = 0;
+life = 500;
+last_door = 0;
+
+//Añade estados al juego
+game.state.add("BootState", new ProceduralGeneration.BootState());
+game.state.add("LoadingState", new ProceduralGeneration.LoadingState());
+game.state.add("DungeonState", new ProceduralGeneration.DungeonState());
+game.state.add("RoomState", new ProceduralGeneration.RoomState());
+game.state.add("WinState", new WinState());
+game.state.add("GameOverState", new GameOverState());
+
+//Inicializa el estado start
+//Parametro extra enviado a init de DungeonState
+game.state.start("DungeonState", true, false, 10, score, life, last_door);
