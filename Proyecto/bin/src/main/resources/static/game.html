@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Raider Oasis</title>
+    <!-- METADATA -->
+    <meta charset="utf-8">
+    <meta name="description" content="Raider Oasis Online Game">
+    <meta name="author" content="">
+    <meta name="keywords" content="juegos en red, online game, raider oasis, game">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- IMPORT --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- (Bootstrap) Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> <!-- Google font -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery library -->    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- (Bootstrap) Latest compiled JavaScript -->
+
+    <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script> JQuery ya estaba importado antes -->
+    
+    <!-- SCRIPTS PARA EL JUEGO -->
+    <script type="text/javascript" src="js/gestures/gestures.js"></script>  
+    <script type="text/javascript" src="js/phaser.js"></script>
+            
+    <script src="js/states/BootState.js"></script>
+    <script src="js/states/LoadingState.js"></script>
+    <script src="js/states/DungeonState.js"></script>
+    <script src="js/states/RoomState.js"></script>
+    <script src="js/states/WinState.js"></script>
+    <script src="js/states/LobbyState.js"></script>
+    <script src="js/states/SearchingLobby.js"></script>
+    <script src="js/states/GameOverState.js"></script>
+    
+    <script src="js/dungeon/Dungeon.js"></script>
+    <script src="js/dungeon/Room.js"></script>
+    
+    <script src="js/prefabs/Prefab.js"></script>
+    <script src="js/prefabs/Hero.js"></script>
+    <script src="js/prefabs/Door.js"></script>
+    <script src="js/prefabs/Enemy.js"></script>
+    <script src="js/prefabs/TriEnemy.js"></script>
+    <script src="js/prefabs/Squarenemy.js"></script>
+    <script src="js/prefabs/Exit.js"></script>
+    <script src="js/prefabs/Treasure.js"></script>
+    
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+    
+<body>
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- El toggle para cuando la página es demasiado estrecha y el menú se transforma en un dropdown -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <!-- Nombre de la web (a la izquierda) -->
+            <a class="navbar-brand" href="index.html">Raider Oasis</a>
+          </div>
+          <!-- Contenido del menú de la navbar en si (a la derecha) -->
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <!-- li: list-item, puede estar activo (seleccionado) o disabled (no se puede pulsar)
+              a: redirecciona a la página que corresponde, al ser paginas locales simplemente se escribe el nombre del html
+              span class = "glyphicon-x" : coloca el glyphicon indicado (vienen con bootstrap) el contenido se deja vacío -->
+              <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              <li class="active"><a href="game.html"><span class="glyphicon glyphicon-play"></span> Play!</a></li>
+              <li class="disabled"><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+              <li class="disabled"><a href="#"><span class="glyphicon glyphicon-king"></span> Leaderboards</a></li>
+              <li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+      <div id="canvas-juego">
+        <!-- Insertar el canvas del juego aqui -->
+      </div>
+
+</body>

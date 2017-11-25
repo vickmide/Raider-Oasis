@@ -1,0 +1,20 @@
+{
+    "assets": {
+        "dungeon_tileset": {"type": "image", "source": "assets/images/tileset.png"},
+        "hero_spritesheet": {"type": "spritesheet", "source": "assets/images/player.png", "frame_width": 38, "frame_height": 58},
+        "enemy_image": {"type": "image", "source": "assets/images/enemigo-linea.png"},
+        "trienemy_image": {"type": "image", "source": "assets/images/enemigo-check.png"},
+        "squarenemy_image": {"type": "image", "source": "assets/images/enemigo-triangulo.png"},
+        "exit_image": {"type": "image", "source": "assets/images/portal.png"},
+        "treasure_image": {"type": "image", "source": "assets/images/treasure.png"}
+    },
+    "groups": [
+        "doors",
+        "exits",
+        "squarenemies",
+        "trienemies",
+        "enemies",
+        "heroes",
+        "treasures"
+    ]    
+}

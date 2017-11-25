@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Raider Oasis</title>
+    <!-- METADATA -->
+    <meta charset="utf-8">
+    <meta name="description" content="Raider Oasis Online Game">
+    <meta name="author" content="">
+    <meta name="keywords" content="juegos en red, online game, raider oasis, game">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- IMPORT --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- (Bootstrap) Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> <!-- Google font -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery library -->    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- (Bootstrap) Latest compiled JavaScript -->
+</head>
+    
+
+<body>
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- El toggle para cuando la página es demasiado estrecha y el menú se transforma en un dropdown -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <!-- Nombre de la web (a la izquierda) -->
+            <a class="navbar-brand" href="#">Raider Oasis</a>
+          </div>
+          <!-- Contenido del menú de la navbar en si (a la derecha) -->
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <!-- li: list-item, puede estar activo (seleccionado) o disabled (no se puede pulsar)
+              a: redirecciona a la página que corresponde, al ser paginas locales simplemente se escribe el nombre del html
+              span class = "glyphicon-x" : coloca el glyphicon indicado (vienen con bootstrap) el contenido se deja vacío -->
+              <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              <li><a href="game.html"><span class="glyphicon glyphicon-play"></span> Play!</a></li>
+              <li class="disabled"><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+              <li class="disabled"><a href="#"><span class="glyphicon glyphicon-king"></span> Leaderboards</a></li>
+              <li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- JUMBOTRON CON EL LOGO -->
+    <div class="jumbotron" id="logo">
+      <div class="container text-center">
+        <h1>Raider Oasis</h1>
+      </div>
+    </div>
+
+    <!-- BLOQUE DE CONTENIDO -->
+<div class="container-fluid text-center" id="wrap">    
+  <div class="row content">
+
+    <!-- Columna de la izquierda -->
+    <div class="col-sm-2 sidenav">
+      <!-- Aqui se pueden poner cosas extra-->
+    </div>
+
+    <!-- Columna del centro (contiene el login box) -->
+    <div class="col-sm-8 text-center">
+      <!-- LOGIN BOX (formulario) -->
+      <div class="login-box">
+        <h1>Login</h1>
+        <form>
+          <div class="form-group">
+            <!-- Campo para introducir el nombre de usuario -->
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username">
+          </div>
+          <div class="form-group">
+            <!-- Campo para introducir una contraseña -->
+            <label for="pwd">Password</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          <div class="checkbox">
+            <!-- Checkbox para hacer login automático -->
+            <label><input type="checkbox"> Remember me</label>
+          </div>
+          <!-- Botones -->
+          <button type="submit" class="btn btn-login-box" id="btn-login">Login</button>
+          <button type="submit" class="btn btn-login-box" id="btn-register">Register</button>       
+        </form>
+      </div>
+    </div>
+
+    <!-- Columna de la derecha -->
+    <div class="col-sm-2 sidenav">
+      <!-- Aqui se pueden poner cosas extra -->
+    </div>
+  </div>
+  </div>
+
+    <!-- FOOTER DE LA PÁGINA -->
+  <footer class="container-fluid text-center">
+      <p>Práctica para la asignatura Juegos en Red del grado de Diseño y Desarrollo de Videojuegos de la URJC realizada por Víctor, Ángel, Nicolás.</p>
+  </footer>
+</body>

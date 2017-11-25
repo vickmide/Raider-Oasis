@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Raider Oasis</title>
+    <!-- METADATA -->
+    <meta charset="utf-8">
+    <meta name="description" content="Raider Oasis Online Game">
+    <meta name="author" content="">
+    <meta name="keywords" content="juegos en red, online game, raider oasis, game">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- IMPORT --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- (Bootstrap) Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> <!-- Google font -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery library -->    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- (Bootstrap) Latest compiled JavaScript -->
+</head>
+    
+
+<body>
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- El toggle para cuando la página es demasiado estrecha y el menú se transforma en un dropdown -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <!-- Nombre de la web (a la izquierda) -->
+            <a class="navbar-brand" href="#">Raider Oasis</a>
+          </div>
+          <!-- Contenido del menú de la navbar en si (a la derecha) -->
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <!-- li: list-item, puede estar activo (seleccionado) o disabled (no se puede pulsar)
+              a: redirecciona a la página que corresponde, al ser paginas locales simplemente se escribe el nombre del html
+              span class = "glyphicon-x" : coloca el glyphicon indicado (vienen con bootstrap) el contenido se deja vacío -->
+              <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              <li><a href="game.html"><span class="glyphicon glyphicon-play"></span> Play!</a></li>
+              <li class="disabled"><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+              <li class="disabled"><a href="#"><span class="glyphicon glyphicon-king"></span> Leaderboards</a></li>
+              <li class="active"><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- JUMBOTRON CON EL LOGO -->
+    <!-- En la página principal contiene el nombre del juego, pero aquí solo ocupa el espacio para dejar hueco entre el navbar y el contenido -->
+    <div class="jumbotron" id="logo">
+    </div>
+
+    <!-- BLOQUE DE CONTENIDO -->
+<div class="container-fluid text-center" id="wrap" style="margin-top: 4em;">    
+  <div class="row content">
+
+    <div class="col-sm-3 sidenav">
+      <!-- NAVEGACIÓN DEL ABOUT -->
+      <!-- Es un elemento de la clase 'list-group' de bootstrap con el css muy editado. Cada uno redirige al apartado correspondiente del contenido sin cambiar de página -->
+      <div class="list-group">
+        <h2 class="list-group-item-heading">Game Features</h2>
+        <a href="#game-feature1" class="list-group-item">Story</a>
+        <a href="#game-feature2" class="list-group-item">Game Modes</a>
+        <a href="#game-feature3" class="list-group-item">Multiplayer</a>
+        <h2 class="list-group-item-heading">Documentation</h2>
+        <a href="#documentation1" class="list-group-item">About us</a>
+        <a href="#documentation2" class="list-group-item">Framework & libs</a>
+        <a href="#documentation3" class="list-group-item">Other resources</a>
+      </div>
+    </div>
+    
+    <!-- CONTENIDO DEL ABOUT -->
+    <!-- El contenido consta de varias filas y 2 columnas, para colocar a un lado texto con un titulo y al otro una imagen representativa -->
+    <!-- Al definir una row dentro de un elemento, aunque pongamos que sean de tamaño 6 y 6, solo cubren el espacio del elemento padre y no de toda la pantalla -->
+    <div class="col-sm-6 text-center"> 
+      <h1>About this project</h1>
+ 
+      <h2>Game Features</h2>
+      <div class="row" id="game-feature1">
+        <div class="col-sm-6">
+          <h3>Story</h3>
+          ssssssssssssssssssssssssss
+        </div>
+        <div class="col-sm-6">
+          -imagen-
+        </div>
+      </div>
+      <div class="row" id="game-feature2">
+        <div class="col-sm-6">
+          -imagen-
+        </div>
+        <div class="col-sm-6">
+          <h3>Game Modes</h3>
+          ssssssssssssssssssssssssssssssssss
+        </div>
+      </div>
+      <div class="row" id="game-feature3">
+        <div class="col-sm-6">
+          <h3>Multiplayer</h3>
+          ssssssssssssssssssssssssssssssssss
+        </div>
+        <div class="col-sm-6">
+          -imagen-
+        </div>
+      </div>
+
+      <h2>Documentation</h2>
+      <div class="row" id="documentation1">
+        <div class="col-sm-6">
+          -imagen-
+        </div>
+        <div class="col-sm-6">
+          <h3>About us</h3>
+          ssssssssssssssssssssssssssssssssss
+        </div>
+      </div>
+      <div class="row" id="documentation2">
+        <div class="col-sm-6">
+          <h3>Framework & libs</h3>
+          ssssssssssssssssssssssssssssssssss
+        </div>
+        <div class="col-sm-6">
+          -image-
+        </div>
+      </div>
+      <div class="row" id="documentation3">
+        <div class="col-sm-6">
+          -image-
+        </div>
+        <div class="col-sm-6">
+          <h3>Other resources</h3>
+          ssssssssssssssssssssssssssssssssss
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3 sidenav">
+      <!-- Aqui se pueden poner cosas extra -->
+      <div class="well">Texto</div>
+    </div>
+
+  </div>
+
+  </div>
+
+    <!-- FOOTER DE LA PÁGINA -->
+  <footer class="container-fluid text-center">
+      <p>Práctica para la asignatura Juegos en Red del grado de Diseño y Desarrollo de Videojuegos de la URJC realizada por Víctor, Ángel, Nicolás.</p>
+  </footer>
+</body>
