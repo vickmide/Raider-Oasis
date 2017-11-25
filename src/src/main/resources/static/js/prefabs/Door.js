@@ -28,6 +28,6 @@ ProceduralGeneration.Door.prototype.enter_door = function () {
         // find the next room using the door direction
         next_room = this.game_state.room.neighbors[this.direction];
         // start room state for the next room
-        this.game_state.game.state.start("BootState", true, false, "assets/levels/room_level.json", "RoomState", {room: next_room}, score,life,this.direction);
+        this.game_state.game.state.start("BootState", true, false, "assets/levels/room_level.json", "RoomState", {room: next_room}, score,life);
     }
 };

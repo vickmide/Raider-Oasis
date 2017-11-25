@@ -50,7 +50,6 @@ ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_para
 
     this.score = score || 0;
     this.life = life || 0;
-    this.last_door = last_door || 0;
 };
 
 //Carga un mapa según el nombre de la sala
@@ -62,6 +61,7 @@ ProceduralGeneration.RoomState.prototype.preload = function () {
 //Override del metodo create de la superclase
 //Visualiza el mapa, crea grupos, añade prefabs
 ProceduralGeneration.RoomState.prototype.create = function () {
+
     var group_name, object_layer, collision_tiles, new_prefab;
 
     //Crea el tilemap, son los índices que indican cada tile a usar
@@ -106,6 +106,7 @@ ProceduralGeneration.RoomState.prototype.create = function () {
 
     //Añade texto con score
     scoreText = game.add.text(480, 10, 'score: ' + this.score, { fontSize: '20px', fill: '#000' });
+    //Añade texto con life
    
 };
 
