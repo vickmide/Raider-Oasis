@@ -8,7 +8,6 @@ var game = new Phaser.Game(704, 704, Phaser.CANVAS, "canvas-juego");
 score = 0;
 life = 500;
 last_door = 0;
-numLobbies = 3;
 
 //var isEmpty = [false, false, false, false];
 //Añade estados al juego
