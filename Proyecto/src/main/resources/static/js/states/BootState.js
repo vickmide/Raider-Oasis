@@ -12,7 +12,7 @@ ProceduralGeneration.BootState.prototype = Object.create(Phaser.State.prototype)
 ProceduralGeneration.BootState.prototype.constructor = ProceduralGeneration.BootState;
 
 //Override de init de la superclase
-ProceduralGeneration.BootState.prototype.init = function (level_file, next_state, extra_parameters, score, life) {
+ProceduralGeneration.BootState.prototype.init = function (level_file, next_state, extra_parameters, score, life, direction) {
     "use strict";
     this.level_file = level_file; //Ruta del JSON
     this.next_state = next_state; //Contexto de RoomState
