@@ -19,7 +19,7 @@ ProceduralGeneration.BootState.prototype.init = function (level_file, next_state
     this.extra_parameters = extra_parameters; //Sala inicial
     this.score = score || 0;
     this.life = life || 0;
-
+    last_door = direction;
 };
 
 ProceduralGeneration.BootState.prototype.preload = function () {
