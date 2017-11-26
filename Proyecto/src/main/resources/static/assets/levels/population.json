@@ -1,0 +1,51 @@
+{
+    "tiles": {
+        "obstacles": {
+            "layer": "collision",
+            "number": {"min": 3, "max": 5},
+            "sizes": [{"x": 1, "y": 1}, {"x": 1, "y": 2}, {"x": 1, "y": 3}, {"x": 2, "y": 1}, {"x": 3, "y": 1}],
+            "possible_tiles": [12]
+        }
+    },
+    "prefabs": {
+        "enemies": {
+            "number": {"min": 0, "max": 1},
+            "possible_prefabs": [
+                {
+                    "prefab": "enemy",
+                    "properties": {"texture": "enemy_image", "group": "enemies"}
+                }
+            ]
+        },
+        "trienemies": {
+            "number": {"min": 0, "max": 1},
+            "possible_prefabs": [
+                {
+                    "prefab": "trienemy",
+                    "properties": {"texture": "trienemy_image", "group": "trienemies"}
+                }
+            ]
+        },
+        "squarenemies": {
+            "number": {"min": 0, "max": 1},
+            "possible_prefabs": [
+                {
+                    "prefab": "squarenemy",
+                    "properties": {"texture": "squarenemy_image", "group": "squarenemies"}
+                }
+            ]
+        },
+        "treasures": {
+            "number": {"min": 0, "max": 1},
+            "possible_prefabs": [
+                {
+                    "prefab": "treasure",
+                    "properties": {"texture": "treasure_image", "group": "treasures"}
+                }
+            ]
+        }
+   }
+}
+
+               
+             
