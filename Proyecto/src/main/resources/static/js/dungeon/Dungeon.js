@@ -78,7 +78,7 @@ ProceduralGeneration.Dungeon.prototype.generate_dungeon = function (number_of_ro
         }
     }]);
     //Devuelve el grid con las salas interconectadas, comenzando en la sala inicial
-    this.print_grid();
+    //this.print_grid();
 
     return this.grid[initial_room_coordinate.y][initial_room_coordinate.x];
 };
@@ -130,19 +130,19 @@ ProceduralGeneration.Dungeon.prototype.check_for_neighbors = function (room, roo
     }
 };
 
-ProceduralGeneration.Dungeon.prototype.print_grid = function () {
-    "use strict";
-    var row_index, column_index, row;
+// ProceduralGeneration.Dungeon.prototype.print_grid = function () {
+//     "use strict";
+//     var row_index, column_index, row;
 
-    for (row_index = 0; row_index < this.grid.length; row_index += 1) {
-        row = "";
-        for (column_index = 0; column_index < this.grid[row_index].length; column_index += 1) {
-            if (this.grid[row_index][column_index]) {
-                row += "R";
-            } else {
-                row += "X";
-            }
-        }
-        console.log(row);
-    }
-};
+//     for (row_index = 0; row_index < this.grid.length; row_index += 1) {
+//         row = "";
+//         for (column_index = 0; column_index < this.grid[row_index].length; column_index += 1) {
+//             if (this.grid[row_index][column_index]) {
+//                 row += "R";
+//             } else {
+//                 row += "X";
+//             }
+//         }
+//         console.log(row);
+//     }
+// };
