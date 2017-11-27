@@ -87,7 +87,11 @@ En la raíz de la carpeta principal del proyecto están los documentos de format
 
 ## Navegación
 
-La página permanece con la misma estructura, por lo que no es necesario modificar el diagrama de navegación. Los cambios que pueden apreciarse son la aparición de una pantalla previa al propio videojuego que se encarga de la creación y generación de salas de juego, cada una con una mazmorra diferente creada de manera aleatoria. Si desde una pestaña diferente pulsamos en la misma sala, se obtiene la misma mazmorra con los mismos enemigos, puertas, obstáculos, tesoros y disposición de habitaciones pero sin la aplicación aún de WebSockets para una conexión entre jugadores.
+La página permanece con la misma estructura, por lo que no es necesario modificar el diagrama de navegación. Los cambios que pueden apreciarse son la aparición de una pantalla previa al propio videojuego que se encarga de la creación y generación de salas de juego, cada una con una mazmorra diferente creada de manera aleatoria. 
+
+![Ejemplo Misma Sala](Pantallas/SeleccionLobby2.png)
+
+Si desde una pestaña diferente pulsamos en la misma sala, se obtiene la misma mazmorra con los mismos enemigos, puertas, obstáculos, tesoros y disposición de habitaciones pero sin la aplicación aún de WebSockets para una conexión entre jugadores.
 
 ![Ejemplo Misma Sala](Pantallas/MismaSala.png)
 
@@ -95,17 +99,17 @@ Esto se consiguen en los estados de phaser que se han creado: SearchinfForLobby,
 
 ## Diagrama de clases y API REST
 
-![Ejemplo Misma Sala](Pantallas/DiagramaClases.png)
+![Diagrama de Clases](Pantallas/DiagramaClases.png)
 
 ## Instrucciones precisas para ejecutar la aplicación
 
 Para ejecutar el videojuego será necesario abrir el directorio del proyecto en Spring Tool Suite de la siguiente manera:
 
-![Ejemplo Misma Sala](Pantallas/Instrucciones1.png)
+![Instrucciones1](Pantallas/Instrucciones1.png)
 
 Posteriormente a eso, se selecciona el archivo seleccionado en la imagen de abajo, click derecho y Run As -> Java Application
 
-![Ejemplo Misma Sala](Pantallas/Instrucciones2a.png)
+![Instrucciones2](Pantallas/Instrucciones2.png)
 
 Una vez hecho todo lo anterior debe dirigirse a un navegador cualquiera (preferiblemente Chrome que es donde ha sido testeado todo el proyecto), y cargar la dirección localhost:8181. 
 
