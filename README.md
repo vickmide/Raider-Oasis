@@ -87,7 +87,7 @@ En la raíz de la carpeta principal del proyecto están los documentos de format
 
 ## Navegación
 
-Ahora aparece activa la pestaña Profile y LeaderBoards, que muestran (Nico completa esto). Los cambios que pueden apreciarse dentro de la pestaña 'Play' son la aparición de una pantalla previa al propio videojuego que se encarga de la creación y generación de salas de juego, cada una con una mazmorra diferente creada de manera aleatoria. 
+Ahora aparece activa la pestaña Leaderboards, que redirige a una página donde se muestra una tabla con los usuarios con mejores puntuaciones. También se ha cambiado ligeramente la funcionalidad de la pagina index, de modo que el formulario de login y registro es totalmente funcional (al rellenar los campos y darle a registrar se crea un nuevo perfil de jugador con esos datos, mientras que si se pulsa el botón de login el servidor verifica los datos introducidos y loggea al usuario). Los cambios que pueden apreciarse dentro de la pestaña 'Play' son la aparición de una pantalla previa al propio videojuego que se encarga de la creación y generación de salas de juego, cada una con una mazmorra diferente creada de manera aleatoria. 
 
 ![Ejemplo Misma Sala](Pantallas/SeleccionLobby2.png)
 
@@ -111,7 +111,11 @@ Posteriormente a eso, se selecciona el archivo seleccionado en la imagen de abaj
 
 ![Instrucciones2](Pantallas/Instrucciones2.png)
 
-Una vez hecho todo lo anterior debe dirigirse a un navegador cualquiera (preferiblemente Chrome que es donde ha sido testeado todo el proyecto), y cargar la dirección localhost:8181. 
+Una vez hecho todo lo anterior debe dirigirse a un navegador cualquiera (preferiblemente Chrome que es donde ha sido testeado todo el proyecto), y cargar la dirección localhost:8181.
+
+**Para el sistema de login es necesario que el navegador permita el uso de cookies.**
+
+Para registrar un perfil con el que jugar, simplemente hay que rellenar el campo de login con los datos deseados y pulsar en register. Una vez registrado, si se escriben los datos correctamente de nuevo y se pulsa el botón login, se abrirá la sesión y el juego guardará las puntuaciones en el perfil correspondiente.
 
 
 ## Equipo de desarrollo
