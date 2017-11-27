@@ -13,11 +13,11 @@
     <!-- IMPORT --> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- (Bootstrap) Latest compiled and minified CSS -->
     <link rel="stylesheet" href="style.css"> <!-- Custom CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> <!-- Google font -->    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery library -->    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- (Bootstrap) Latest compiled JavaScript -->
-    <script src="js/login.js"></script> <!-- Sistema de Login -->
-    <script src="js/cookies.js"></script> <!-- Sistema de Login -->
+
+    <script src="leaderboard.js"></script>
 </head>
     
 
@@ -41,10 +41,10 @@
               <!-- li: list-item, puede estar activo (seleccionado) o disabled (no se puede pulsar)
               a: redirecciona a la página que corresponde, al ser paginas locales simplemente se escribe el nombre del html
               span class = "glyphicon-x" : coloca el glyphicon indicado (vienen con bootstrap) el contenido se deja vacío -->
-              <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
               <li><a href="game.html"><span class="glyphicon glyphicon-play"></span> Play!</a></li>
               <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-              <li><a href="leaderboards.html"><span class="glyphicon glyphicon-king"></span> Leaderboards</a></li>
+              <li class="active"><a href="leaderboards.html"><span class="glyphicon glyphicon-king"></span> Leaderboards</a></li>
               <li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
             </ul>
           </div>
@@ -52,53 +52,51 @@
     </nav>
 
     <!-- JUMBOTRON CON EL LOGO -->
+    <!-- En la página principal contiene el nombre del juego, pero aquí solo ocupa el espacio para dejar hueco entre el navbar y el contenido -->
     <div class="jumbotron" id="logo">
-      <div class="container text-center">
-        <h1>Raider Oasis</h1>
-      </div>
     </div>
 
     <!-- BLOQUE DE CONTENIDO -->
-<div class="container-fluid text-center" id="wrap">    
+<div class="container-fluid text-center" id="wrap" style="margin-top: 4em;">    
   <div class="row content">
 
-    <!-- Columna de la izquierda -->
-    <div class="col-sm-2 sidenav">
-      <!-- Aqui se pueden poner cosas extra-->
+    <div class="col-sm-3 sidenav">
+        <!-- Aqui se pueden poner cosas extra -->
+    </div>
+    
+    <!-- CONTENIDO DE LAS LEADERBOARDS -->
+    <div class="col-sm-6 text-center"> 
+      <h1>Leaderboards</h1>
+      <table class="table table-condensed">
+    <thead>
+      <tr class="active">
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody id="tablebod">
+      <tr class="active">
+        <td>John</td>
+        <td>Doe</td>
+      </tr>
+      <tr class="active">
+        <td>Mary</td>
+        <td>Moe</td>
+      </tr>
+      <tr class="active">
+        <td>July</td>
+        <td>Dooley</td>
+      </tr>
+    </tbody>
+  </table>
     </div>
 
-    <!-- Columna del centro (contiene el login box) -->
-    <div class="col-sm-8 text-center">
-      <!-- LOGIN BOX (formulario) -->
-      <div class="login-box">
-        <h1>Login</h1>
-        <form name="loginForm">
-          <div class="form-group">
-            <!-- Campo para introducir el nombre de usuario -->
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" onsubmit="validateLogin()">
-          </div>
-          <div class="form-group">
-            <!-- Campo para introducir una contraseña -->
-            <label for="pwd">Password</label>
-            <input type="password" class="form-control" name="pwd">
-          </div>
-          <div class="checkbox">
-            <!-- Checkbox para hacer login automático -->
-            <label><input type="checkbox"> Remember me</label>
-          </div>
-          <!-- Botones -->
-          <button type="button" class="btn btn-login-box" id="btn-login"onclick="validateLogin()">Login</button>
-          <button type="button" class="btn btn-login-box" id="btn-register" onclick="register()">Register</button>    
-        </form>
-      </div>
-    </div>
-
-    <!-- Columna de la derecha -->
-    <div class="col-sm-2 sidenav">
+    <div class="col-sm-3 sidenav">
       <!-- Aqui se pueden poner cosas extra -->
     </div>
+
   </div>
+
   </div>
 
     <!-- FOOTER DE LA PÁGINA -->
