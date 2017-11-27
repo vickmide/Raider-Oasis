@@ -19,6 +19,7 @@ ProceduralGeneration.InitDungeonState = function () {
     
     //variable auxiliar
     i = 0;
+    j = 0;
 };
 
 //Subclase extiende de superclase

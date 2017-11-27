@@ -24,4 +24,4 @@ game.state.add("GameOverState", new GameOverState());
 //Inicializa el estado start
 //Parametro extra enviado a init de DungeonState
 //game.state.start("DungeonState", true, false, 10, score, life);
-game.state.start("SearchingLobby", true, false, numLobbies);
+game.state.start("SearchingLobby", true, false);

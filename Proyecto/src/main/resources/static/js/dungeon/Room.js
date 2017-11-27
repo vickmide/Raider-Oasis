@@ -74,7 +74,7 @@ ProceduralGeneration.Room.prototype.populate = function (population) {
             this.populate_tiles(number_of_tiles, population.tiles[tile_type].layer, population.tiles[tile_type].possible_tiles, population.tiles[tile_type].sizes);
         }
     }
-    var j = 0;
+   
     // populate the room with prefabs
     for (prefab_type in population.prefabs) {
         if (population.prefabs.hasOwnProperty(prefab_type)) {
