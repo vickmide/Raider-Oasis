@@ -4,6 +4,7 @@ package es.urjc.jer;
 import java.util.ArrayList;
 import java.util.Collection;
 //import java.util.concurrent.atomic.AtomicLong;
+import java.util.Comparator;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -128,5 +129,38 @@ public class PerfilController {
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+	}
+	
+	@GetMapping("/leaderboard")
+	public ArrayList<Perfil> tablapuntuacion() {
+		//generabasura();
+		perfiles.sort(Comparator.comparing(Perfil::getPuntuacionMax).reversed());
+		return perfiles;
+	}
+	
+	//funcion de testeo para probar leaderboard
+	public void generabasura() {
+		Perfil p1 = new Perfil();
+		Perfil p2 = new Perfil();
+		Perfil p3 = new Perfil();
+		
+		p1.setId(0);
+		p1.setNombre("nombre1");
+		p1.setClave("clave1");
+		p1.setPuntuacionMax(10000);
+		
+		p2.setId(0);
+		p2.setNombre("nombre2");
+		p2.setClave("clave2");
+		p2.setPuntuacionMax(200000);
+		
+		p3.setId(0);
+		p3.setNombre("nombre2");
+		p3.setClave("clave2");
+		p3.setPuntuacionMax(10500);
+		
+		perfiles.add(p1);
+		perfiles.add(p2);
+		perfiles.add(p3);
 	}
 }

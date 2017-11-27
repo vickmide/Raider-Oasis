@@ -3,7 +3,7 @@ package es.urjc.jer;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Perfil {
+public class Perfil implements Comparable<Perfil>{
 
 	private int id;
 	private String nombre;
@@ -11,6 +11,14 @@ public class Perfil {
 	private int puntuacionMax;
 	private ArrayList<Integer> puntuaciones = new ArrayList<Integer>();
 	
+
+	public void setPuntuacionMax(int puntuacionMax) {
+		this.puntuacionMax = puntuacionMax;
+	}
+
+	public void setPuntuaciones(ArrayList<Integer> puntuaciones) {
+		this.puntuaciones = puntuaciones;
+	}
 
 	public Perfil() {
 	}
@@ -91,6 +99,19 @@ public class Perfil {
 		return true;
 	}
 	
+	
+	
+	@Override
+	public int compareTo (Perfil p) {
+		if (this.puntuacionMax < p.getPuntuacionMax()) {
+			return -1;
+		} 
+		if (this.puntuacionMax > p.getPuntuacionMax()) {
+			return 1;
+		}
+		return 0;
+		
+	}
 	
 
 }
