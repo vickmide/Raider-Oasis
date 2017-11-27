@@ -87,7 +87,7 @@ En la raíz de la carpeta principal del proyecto están los documentos de format
 
 ## Navegación
 
-La página permanece con la misma estructura, por lo que no es necesario modificar el diagrama de navegación. Los cambios que pueden apreciarse son la aparición de una pantalla previa al propio videojuego que se encarga de la creación y generación de salas de juego, cada una con una mazmorra diferente creada de manera aleatoria. 
+Ahora aparece activa la pestaña Profile y LeaderBoards, que muestran (Nico completa esto). Los cambios que pueden apreciarse dentro de la pestaña 'Play' son la aparición de una pantalla previa al propio videojuego que se encarga de la creación y generación de salas de juego, cada una con una mazmorra diferente creada de manera aleatoria. 
 
 ![Ejemplo Misma Sala](Pantallas/SeleccionLobby2.png)
 
@@ -95,7 +95,7 @@ Si desde una pestaña diferente pulsamos en la misma sala, se obtiene la misma m
 
 ![Ejemplo Misma Sala](Pantallas/MismaSala.png)
 
-Esto se consiguen en los estados de phaser que se han creado: SearchinfForLobby, LobbyState e InitDungeon. La pantalla de salas (o lobbies en inglés) solo acepta cuatro máximo. Una vez creadas todas las posibles no se podrá generar ninguna más a no ser que sea eliminada cuando los jugadores la abandonen.
+Esto se consiguen en los estados de phaser que se han creado: SearchingLobby, LobbyState e InitDungeon. La pantalla de salas (o lobbies en inglés) solo acepta cuatro como máximo. Una vez creadas todas las posibles no se podrá generar ninguna más a no ser que sea eliminada cuando los jugadores la abandonen. Esto se ha aplicado mediante los conocimientos adquiridos durante las clases de teoría sobre API REST. Se ha creado un servidor con unas clases pensadas para almacenar datos de la mazmorra y ser llamadas desde el cliente con los métodos ajax correspondientes de jQuery. Estos métodos son GET y POST. DELETE aparece en el código implementado pero no funciona ya que necesitamos el uso de WebSockets, así que esperamos que en nuestro caso no se evalúe hasta la siguiente fase.
 
 ## Diagrama de clases y API REST
 
