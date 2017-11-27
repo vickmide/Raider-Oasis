@@ -99,7 +99,24 @@ Esto se consiguen en los estados de phaser que se han creado: SearchingLobby, Lo
 
 ## Diagrama de clases y API REST
 
-![Diagrama de Clases](Pantallas/DiagramaClases.png)
+A continuación se muestra el diagrama de clases formado por el juego (game.html):
+LEYENDA
+- Verde: @RestController clases que implementan la API REST en el lado del servidor
+- Amarillo: modelos de datos usados en las peticiones REST
+- Azul: Estados implementados para Phaser
+- Rosa: Clases generadoras de la mazmorra aleatoria
+- Rojo: Clases encargadas del reconocimiento de trazos
+- Naranja: Grupos de objectos para Phaser
+
+![Diagrama de Clases](Pantallas/dclases.png)
+
+Las peticiones por el lado del cliente son realizadas para conectar el cliente a una determinada mazmorra (LobbyState y SearchingLobby), y para actualizar puntuaciones del jugador (WinState). 
+
+El diagrama de flujo de pantallas dentro de la aplicación es actualizado al siguiente:
+
+![Flujo de pantallas](Pantallas/flujo2.jpg)
+
+Contiene las pantallas anteriores con la novedad de que ahora puede visitarse leaderboards para consultar puntuaciones y dentro de game.html se dispone de dos pantallas, una para unirse a una sala y otra para jugar.
 
 ## Instrucciones precisas para ejecutar la aplicación
 
