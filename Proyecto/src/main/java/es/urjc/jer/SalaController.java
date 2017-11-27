@@ -1,7 +1,6 @@
 package es.urjc.jer;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Random;
 
 import org.springframework.http.HttpStatus;
@@ -49,8 +48,8 @@ public class SalaController {
 	}
 	
 	@GetMapping
-	public Collection<Sala> salas() {
-		return lista_salas;
+	public int salas() {
+		return lista_salas.size();
 	}
 	
 	private ArrayList<Double> randomform (){
@@ -108,8 +107,8 @@ public class SalaController {
 		Random rnd = new Random();
 		
 		for (int i = 0; i < 50; i++) {
-			a.add(rnd.nextInt(6)+3);
-			a.add(rnd.nextInt(6)+3);
+			a.add(rnd.nextInt(5)+3);
+			a.add(rnd.nextInt(5)+3);
 		}
 
 		return a;		
