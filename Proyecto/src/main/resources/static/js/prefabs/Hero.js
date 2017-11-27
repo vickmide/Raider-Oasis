@@ -1,9 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f48bbe278209fb20c0896207c0339b0ea6c98a6e
 var ProceduralGeneration = ProceduralGeneration || {};
 
 ProceduralGeneration.Hero = function (game_state, name, position, properties) {
     ProceduralGeneration.Prefab.call(this, game_state, name, position, properties);
     
+<<<<<<< HEAD
     var tile_size = 64; // Tamaño del tile
     var offset_x = 30; // Offset X del sprite dado su anchor
     var offset_y = 15; // Offset Y del sprite dado su anchor
@@ -142,6 +146,12 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
     this.body.width = 25;
     this.body.height = 25;
 
+=======
+    this.anchor.setTo(0.5);
+    
+    this.walking_speed = +properties.walking_speed;
+
+>>>>>>> f48bbe278209fb20c0896207c0339b0ea6c98a6e
     this.game_state.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
     
@@ -218,4 +228,7 @@ ProceduralGeneration.Hero.prototype.update = function () {
         this.frame = 0;
     }
 };
+<<<<<<< HEAD
 >>>>>>> 746d011266c84a345f88eb980bb0380d09d57b55
+=======
+>>>>>>> f48bbe278209fb20c0896207c0339b0ea6c98a6e

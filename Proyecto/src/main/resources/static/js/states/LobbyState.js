@@ -10,7 +10,7 @@ LobbyState.prototype = Object.create(Phaser.State.prototype);
 //Se le asigna a WinState el constructor correspondiente
 LobbyState.prototype.constructor = ProceduralGeneration.LobbyState;
 //Override init de la superclase
-LobbyState.prototype.init = function (numLobbies, sala) {
+LobbyState.prototype.init = function (sala) {
 
     //this.numLobbies = numLobbies;
     this.sala = sala;
