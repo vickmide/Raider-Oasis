@@ -27,12 +27,12 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
     
     this.walking_speed = +properties.walking_speed;
 
+    this.game_state.game.physics.arcade.enable(this);
+    this.body.collideWorldBounds = true;
+    
     // Cambiamos el tamaño del body (físico, no del sprite) para que las colisiones sean mas ajustadas
     this.body.width = 25;
     this.body.height = 25;
-
-    this.game_state.game.physics.arcade.enable(this);
-    this.body.collideWorldBounds = true;
     
     this.animations.add("walking", [1, 2, 3, 4], 6, true);
     this.cursors = this.game_state.game.input.keyboard.createCursorKeys();
