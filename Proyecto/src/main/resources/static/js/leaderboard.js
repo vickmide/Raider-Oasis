@@ -1,10 +1,17 @@
 $(document).ready(function() {
+    var d = "";
 	$.ajax({
-        method: "GET",
         url: 'http://localhost:8181/perfil/leaderboard'
-    }).done(function (perfiles) {
-        console.log(JSON.stringify(perfiles));
-            $('#tablebod').append(
-            '<tr class="active"><td>Name</td><td>Score</td></tr>')
+    }).done(function (datos) {
+        for (var i = 0; i < datos.length; i++) {
+             
+            d += '<tr>'+
+            '<td>'+datos[i].nombre+'</td>'+
+            '<td>'+datos[i].puntuacionMax+'</td>'+
+            '</tr>';
+            }
+            console.log(JSON.stringify(datos));
+            console.log(d);
+            $('#tablebod').append(d);
     });
 });

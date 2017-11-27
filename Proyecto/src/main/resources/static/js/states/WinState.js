@@ -27,4 +27,23 @@ WinState.prototype.create = function () {
     };
     var text = game.add.text(game.world.centerX, game.world.centerY, "- ¡HAS LOGRADO ESCAPAR! -\nHas huido de la mazmorra\nTu puntuación total: " + this.score, style);
     text.anchor.set(0.5);
+    $(document).ready(function() {
+        var logedUser = getCookie("logedAs");
+        if (logedUser != "") {
+            //console.log("Tu id es " + logedUser + "!");
+            $.ajax({
+                method: "POST",
+                url: 'http://localhost:8181/perfil/' + logedUser + '/updatePuntuaciones/' + score,
+                data: JSON.stringify({}),
+                processData: false,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).done(function (data) {
+                
+            });
+        }
+
+
+    });
 };
