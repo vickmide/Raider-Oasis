@@ -1,6 +1,6 @@
 # RAIDER OASIS
 
-# Fase 1
+# Fase 1 - Equipo de desarrollo y temática del juego
 
 ## Descripción general
 Juego multijugador online de aventura y rol. Ambientación basada en la exploración de ruinas egipcias donde el jugador deberá colaborar o competir con otros jugadores para derrotar a enemigos y conseguir valiosos tesoros.
@@ -37,7 +37,7 @@ Por otro lado, las partidas se organizarán en diferentes salas de jugadores, do
 - El sistema será capaz de responder a los diferentes tipos de navegares, adaptandose al dispositivo (responsive).
 - Resto de requisitos necesarios para el desarrollo correcto de una partida como la descrita en este documento. Enfásis posterior de dichas carácterísticas en el documento de diseño de la Fase 2 del proyecto.
 
-# Fase 2
+# Fase 2 - Desarrollo del juego en local 
 
 ## Pantallas
 
@@ -83,7 +83,7 @@ En la raíz de esta carpeta se encuentran el main.js donde se inicializarán tod
         
 En la raíz de la carpeta principal del proyecto están los documentos de formato html que tienen que ver con el desarrollo y diseño de la web y el index.html para iniciar la aplicación. Asimismo, se incorpora este mismo archivo README.md, con la especificación de licencias de librerías que se han usado y la hoja de estilos.css
 
-# Fase 3
+# Fase 3 - Inclusión de backend con REST
 
 ## Navegación
 
