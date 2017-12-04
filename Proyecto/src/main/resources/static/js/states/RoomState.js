@@ -13,6 +13,7 @@ ProceduralGeneration.RoomState = function () {
     //Como todos heredan de prefab, se llama a su constructor usando las propiedades del polimorfismo
     this.prefab_classes = {
         "hero": ProceduralGeneration.Hero.prototype.constructor,
+        "hero2": ProceduralGeneration.Hero2.prototype.constructor,        
         "door": ProceduralGeneration.Door.prototype.constructor,
         "enemy": ProceduralGeneration.Enemy.prototype.constructor,
         "trienemy": ProceduralGeneration.Trienemy.prototype.constructor,
@@ -105,7 +106,7 @@ ProceduralGeneration.RoomState.prototype.create = function () {
     }, this);
 
     //Añade texto con score
-    scoreText = game.add.text(480, 10, 'score: ' + this.score, { fontSize: '20px', fill: '#000' });
+    scoreText = game.add.text(500, 20, 'score: ' + this.score, { fontSize: '20px', fill: '#FFFFFF' });
     //Añade texto con life
    
 };

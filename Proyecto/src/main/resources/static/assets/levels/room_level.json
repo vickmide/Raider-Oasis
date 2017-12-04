@@ -2,6 +2,8 @@
     "assets": {
         "dungeon_tileset": {"type": "image", "source": "assets/images/tileset.png"},
         "hero_spritesheet": {"type": "spritesheet", "source": "assets/images/player.png", "frame_width": 38, "frame_height": 58},
+        "hero2_spritesheet": {"type": "spritesheet", "source": "assets/images/player2.png", "frame_width": 38, "frame_height": 58},
+        
         "enemy_image": {"type": "image", "source": "assets/images/enemigo-linea.png"},
         "trienemy_image": {"type": "image", "source": "assets/images/enemigo-check.png"},
         "squarenemy_image": {"type": "image", "source": "assets/images/enemigo-triangulo.png"},
@@ -15,6 +17,7 @@
         "trienemies",
         "enemies",
         "heroes",
+        "heroes2",
         "treasures"
     ]    
 }

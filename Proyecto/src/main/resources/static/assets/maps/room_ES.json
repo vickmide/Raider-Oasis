@@ -102,7 +102,30 @@
                  "width":64,
                  "x":320,
                  "y":573
-                }],
+                }, 
+                {
+                "height":40,
+                "id": 4,
+                "name":"hero2",
+                "properties":
+                   {
+                    "group":"heroes2",
+                    "texture":"hero2_spritesheet",
+                    "walking_speed":"150"
+                   },
+                "propertytypes":
+                   {
+                    "group":"string",
+                    "texture":"string",
+                    "walking_speed":"string"
+                   },
+                "rotation":0,
+                "type":"hero2",
+                "visible":true,
+                "width":40,
+                "x":333,
+                "y":331
+               }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
