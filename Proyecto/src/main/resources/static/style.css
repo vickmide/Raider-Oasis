@@ -85,11 +85,11 @@ h2 {
 #wrap {
     /* Fondo de la seccion de contenido de la web */
     background-image: url("img/city.png");
-    background-size: cover;
+    background-size:100% cover;    
     background-repeat: no-repeat;
     color: #ffffff;
     /* Margenes y padding para colocar el elemento en la pagina y definir su tamaño */
-    padding-top: 250px;
+    padding-top: 40em;
     margin-top: 30em;
     min-block-size: 50em;
 }
