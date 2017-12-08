@@ -125,6 +125,7 @@ SearchingLobby.prototype.create = function () {
     }
 
     function onClickB(){
+        hero_id = this.pos;
         $.ajax({           
             url: 'http://localhost:8181/dungeon/' + this.pos,
         }).done(function (data) {

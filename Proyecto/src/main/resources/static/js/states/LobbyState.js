@@ -23,6 +23,7 @@ LobbyState.prototype.create = function () {
 };
 
 function createItem() {
+    hero_id = numLobbies+1;
     $.ajax({
         method: "POST",
         url: 'http://localhost:8181/dungeon',

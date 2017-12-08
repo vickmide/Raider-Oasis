@@ -1,12 +1,13 @@
 var ProceduralGeneration = ProceduralGeneration || {};
 
+drawhero = false;
+
 ProceduralGeneration.Hero2 = function (game_state, name, position, properties) {
     ProceduralGeneration.Prefab.call(this, game_state, name, position, properties);
     
     var tile_size = 64; // Tamaño del tile
     var offset_x = 30; // Offset X del sprite dado su anchor
     var offset_y = 15; // Offset Y del sprite dado su anchor
-    
     // Coloca al jugador en el sitio correcto y mirando al lado correspondiente a la ultima puerta por la que entró
     if (last_door == "S") {
         this.x = (6 * tile_size) - offset_x;
@@ -37,13 +38,31 @@ ProceduralGeneration.Hero2 = function (game_state, name, position, properties) {
     this.animations.add("walking", [1, 2, 3, 4], 6, true);
     this.cursors = this.game_state.game.input.keyboard.createCursorKeys();
     globalhero2 = this;
+
+    xhero2 = this.game_state.room.coordinate.row;
+    yhero2 = this.game_state.room.coordinate.column;
+    this.x =  (100 * tile_size) - offset_x;
+    this.y = (100 * tile_size) - offset_y + 10;
 };
 
 ProceduralGeneration.Hero2.prototype = Object.create(ProceduralGeneration.Prefab.prototype);
 ProceduralGeneration.Hero2.prototype.constructor = ProceduralGeneration.Hero2;
 
 ProceduralGeneration.Hero2.prototype.update = function () {
+    connection.onmessage = function (msg) {
+        console.log("WS message: " + msg.data);
+        var data = JSON.parse(msg.data);
+        if (data.id == hero_id && data.xhero2 == xhero && data.yhero2 == yhero){
+            drawhero = true;
+        } else {
+            drawhero = false;
+        }
+    }
      
-     this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision);
-
+    this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision);
+      
+    if (drawhero == true) {
+          this.x = 300;
+          this.y = 300;
+      }
 };

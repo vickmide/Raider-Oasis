@@ -33,7 +33,6 @@ ProceduralGeneration.RoomState.prototype.init = function (level_data, extra_para
     var tileset_index, tile_dimensions;
     //Si existen ya datos de nivel, no se cargan de nuevo.
     this.level_data = this.level_data || level_data;
-
     //Escala el canvas y lo posiciona en pantalla
     this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
     this.scale.pageAlignHorizontally = true;
@@ -64,12 +63,13 @@ ProceduralGeneration.RoomState.prototype.preload = function () {
 ProceduralGeneration.RoomState.prototype.create = function () {
 
     var group_name, object_layer, collision_tiles, new_prefab;
-
     //Crea el tilemap, son los índices que indican cada tile a usar
     this.map = this.game.add.tilemap(this.MAP_KEY);
     //añade una imagen al mapa para ser usada como tileset
     //recibe nombre del tileset como se especifica en los datos del mapa y key
     this.map.addTilesetImage(this.map.tilesets[0].name, this.MAP_TILESET);
+
+
 
     //Crea mapa de layers
     this.layers = {};

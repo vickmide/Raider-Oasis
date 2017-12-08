@@ -15,6 +15,7 @@ ProceduralGeneration.BootState.prototype.constructor = ProceduralGeneration.Boot
 ProceduralGeneration.BootState.prototype.init = function (level_file, next_state, extra_parameters, score, life, direction) {
     "use strict";
     this.level_file = level_file; //Ruta del JSON
+    console.log(this.level_file);
     this.next_state = next_state; //Contexto de RoomState
     this.extra_parameters = extra_parameters; //Sala inicial
     this.score = score || 0;
@@ -43,7 +44,8 @@ ProceduralGeneration.BootState.prototype.create = function () {
     "use strict";
     var level_text, level_data;
     level_text = this.game.cache.getText("level1");
-    level_data = JSON.parse(level_text); //traduce el archivo JSON
+    level_data = JSON.parse(level_text);     
+    //traduce el archivo JSON
     //Invoca al siguiente estado LoadingState
     //Envia: level_data: JSON traducido, next_state: contexto para RoomState, extra_parameters: sala inicial
     this.game.state.start("LoadingState", true, false, level_data, this.next_state, this.extra_parameters, this.score, this.life);

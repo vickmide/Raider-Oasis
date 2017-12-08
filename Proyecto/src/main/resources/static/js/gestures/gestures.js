@@ -197,7 +197,7 @@ var gestures = function(config){
 			b = b + gestureV[i]*inputV[i+1] - gestureV[i+1]*inputV[i];
 		}
 		var angle = Math.atan2(b,a);
-
+		//LA VERDAD = NaN
 		return Math.acos(a*Math.cos(angle) + b*Math.sin(angle));
 	};
 	
