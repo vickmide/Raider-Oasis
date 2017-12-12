@@ -7,9 +7,16 @@
 });*/
 
 $(document).ready(function() {
+	// Comprobación de login
 	var logedUser = getCookie("logedAs");
-    if (logedUser != "") {
-        alert("Tu id es " + logedUser + "!");
+	var canvas = document.getElementById("canvas-juego");
+    if (logedUser == "") {
+    	if (canvas != null) {
+    		alert("Debes estar registrado y logeado para jugar");
+        	window.location.href = "index.html";
+    	}
+    } else {
+    	//alert("Tu id es " + logedUser + "!");
     }
 });
 
@@ -60,7 +67,7 @@ function serverLogin(username,pwd) {
             }
             var logedUser = getCookie("logedAs");
             if (logedUser != "") {
-                alert("Hello " + logedUser + "!");
+                alert("¡Tu id de jugador es " + logedUser + "!");
             }
             return true;
         } else {
@@ -77,7 +84,7 @@ function register() {
     var perfilARegistrar = {nombre: username, clave: pwd};
     $.ajax({
         method: "POST",
-        url: 'http://localhost:8181/perfil/register',
+        url: 'http://localhost:8181/perfil',
         data: JSON.stringify(perfilARegistrar),
         processData: false,
         headers: {
