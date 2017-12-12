@@ -49,7 +49,7 @@ public class PerfilController {
 	}
 
 	// Crear perfil (registro)
-	@PostMapping("/register")
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Perfil nuevoPerfil(@RequestBody Perfil perfil) {
 		perfil.setId(nextId);
@@ -74,7 +74,7 @@ public class PerfilController {
 	}
 	
 	// Obtener puntuaciones de un perfil específico (por su id)
-	@GetMapping("/{id}/puntuaciones")
+	@GetMapping("/puntuaciones/{id}")
 	public ResponseEntity<ArrayList<Integer>> getPuntuaciones(@PathVariable int id) {
 
 		Perfil savedPerfil = perfiles.get(id);
@@ -88,7 +88,7 @@ public class PerfilController {
 	}
 	
 	// Obtener puntuacion max de un perfil específico (por su id)
-	@GetMapping("/{id}/puntuacionMax")
+	@GetMapping("/puntuacionMax/{id}")
 	public ResponseEntity<Integer> getPuntuacionMax(@PathVariable int id) {
 
 		Perfil savedPerfil = perfiles.get(id);
@@ -102,7 +102,7 @@ public class PerfilController {
 	}
 	
 	// Dar una puntuación nueva a un jugador segun su ID
-	@PostMapping("/{id}/updatePuntuaciones/{puntuacion}")
+	@PostMapping("/puntuaciones/{id}/{puntuacion}")
 	public ResponseEntity<HttpStatus> updatePuntuaciones(@PathVariable int id, @PathVariable int puntuacion) {
 
 		Perfil savedPerfil = perfiles.get(id);
