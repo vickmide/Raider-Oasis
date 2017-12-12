@@ -27,6 +27,11 @@ function getCookie(cname) {
     return "";
 }
 
+function delete_cookie(cname) {
+	  document.cookie = cname +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	  // Al ponerle una fecha en el pasado, la cookie "expira" y se borra
+}
+
 /*function checkCookie() {
     var user=getCookie("username");
     if (user != "") {
