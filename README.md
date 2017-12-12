@@ -134,6 +134,13 @@ Una vez hecho todo lo anterior debe dirigirse a un navegador cualquiera (preferi
 
 Para registrar un perfil con el que jugar, simplemente hay que rellenar el campo de login con los datos deseados y pulsar en register. Una vez registrado, si se escriben los datos correctamente de nuevo y se pulsa el botón login, se abrirá la sesión y el juego guardará las puntuaciones en el perfil correspondiente.
 
+# Fase 4 - Inclusión de WebSockets
+
+## Protocolo Utilizado
+
+## Actualización del diagrama de clases
+
+## Cómo iniciar el videojuego + Gameplay
 
 ## Equipo de desarrollo
 
