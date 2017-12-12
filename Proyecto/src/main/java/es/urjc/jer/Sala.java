@@ -3,54 +3,52 @@ package es.urjc.jer;
 import java.util.ArrayList;
 
 public class Sala {
+
+	private int id;
+	private int numJugadores;
+	private int status;
+	private ArrayList<Player> players = new ArrayList<>();
 	
-	private ArrayList<Double> rnform; //"forma" de la sala
-	private ArrayList<Integer> rntile; //numero de tiles en cada sala
-	private ArrayList<Point> rnsize; //tamaño del tile 
-	private ArrayList<Integer> rntilecenter; //posicion del tile en sala
-	private ArrayList<Integer> rnprefab; //numero de prefabs por sala
+	Sala() {}
 	
-	public Sala() {}
+	Sala(int id, int numj, int status) {
+		this.id = id;
+		this.numJugadores = numj;
+		this.status = status;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getNumJugadores() {
+		return numJugadores;
+	}
+
+	public void setNumJugadores(int numJugadores) {
+		this.numJugadores = numJugadores;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	
+	public void addPlayer(Player p) {
+		p.setPlay(true);
+		this.numJugadores++;
+		players.add(p);
+	}
 	
-	public ArrayList<Integer> getRntile() {
-		return rntile;
-	}
-
-	public void setRntile(ArrayList<Integer> rntile) {
-		this.rntile = rntile;
-	}
-
-	public ArrayList<Point> getRnsize() {
-		return rnsize;
-	}
-
-	public void setRnsize(ArrayList<Point> rnsize) {
-		this.rnsize = rnsize;
-	}
-
-	public ArrayList<Integer> getRntilecenter() {
-		return rntilecenter;
-	}
-
-	public void setRntilecenter(ArrayList<Integer> rntilecenter) {
-		this.rntilecenter = rntilecenter;
-	}
-
-	public ArrayList<Integer> getRnprefab() {
-		return rnprefab;
-	}
-
-	public void setRnprefab(ArrayList<Integer> rnprefab) {
-		this.rnprefab = rnprefab;
-	}
-
-	public ArrayList<Double> getRnform() {
-		return rnform;
-	}
-
-	public void setRnform(ArrayList<Double> rnform) {
-		this.rnform = rnform;
+	public ArrayList<Player> getPlayers() {
+		return players;
 	}
 	
 }
