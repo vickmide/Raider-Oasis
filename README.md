@@ -147,6 +147,16 @@ Cuando sea necesario se mandarán los datos mediante .send al servidor. El servi
 ![WebSocket1](Pantallas/WSServidor.png)
 
 ## Actualización del diagrama de clases
+A continuación se muestra un diagrama de clases actualizado con las clases implementadas para el manejo de WebSockets. La leyenda utilizada es similar a la del diagrama anterior:
+- Verde: @RestController clases que implementan la API REST en el lado del servidor
+- Naranja: modelos de datos utilizados
+- Azul: Estados implementados para Phaser
+- Rosa: Clases generadoras de la mazmorra aleatoria
+- Rojo: Clases encargadas del reconocimiento de trazos
+- Amarillo: Grupos de objectos para Phaser
+- Azul cian: Handler para el manejo de WS
+
+![Diagrama de Clases](Pantallas/DIAGRAMAFINAL.png)
 
 ## Cómo iniciar el videojuego + Gameplay
 
