@@ -9,7 +9,17 @@ score = 0;
 life = 500;
 last_door = 0;
 hero_id = -1;
-
+lobbyactual = -1;
+//primeraroom = true;
+salahero = {
+        x: 0,
+        y: 0
+    };
+salaother = {
+        x: 0,
+        y: 0
+    };
+mismasala = true;
 
 //VARIABLES CLIENTE-SERVIDOR
 numJugadores = 0;
@@ -29,6 +39,7 @@ $(document).ready(function () {
     numSalas = 0;
     WSResponse_salaCreada = false;
     WSResponse_unionSala = false;
+    WSResponse_doorMsg = false;
 
     connection.onmessage = function(msg) {
         console.log("WS message: " + msg.data);
@@ -44,6 +55,16 @@ $(document).ready(function () {
         case "joinSala_msg":
         	
         	WSResponse_unionSala = true;
+        	break;
+        case "door_msg":
+        	salaother = {
+                x: misdatos.newroomX,
+                y: misdatos.newroomY
+            };
+        	WSResponse_doorMsg = true;
+        	break;
+        case "entity_msg":
+        	WSResponse_entityMsg = true;
         	break;
         }  
        }
