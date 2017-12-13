@@ -113,8 +113,7 @@ ProceduralGeneration.Dungeon.prototype.check_for_neighbors = function (room, roo
     //Selecciona un numero aleatorio de vecinos
     number_of_neighbors = 1;
     //this.game_state.game.rnd.between(1, available_neighbors.length - 1);
-    console.log(number_of_neighbors);
-
+    
     //Selecciona las coordenadas del vecino
     for (neighbor_index = 0; neighbor_index < number_of_neighbors; neighbor_index += 1) {
         random_number = rnform.shift();

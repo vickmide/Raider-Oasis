@@ -49,20 +49,5 @@ ProceduralGeneration.Hero2.prototype = Object.create(ProceduralGeneration.Prefab
 ProceduralGeneration.Hero2.prototype.constructor = ProceduralGeneration.Hero2;
 
 ProceduralGeneration.Hero2.prototype.update = function () {
-    connection.onmessage = function (msg) {
-        console.log("WS message: " + msg.data);
-        var data = JSON.parse(msg.data);
-        if (data.id == hero_id && data.xhero2 == xhero && data.yhero2 == yhero){
-            drawhero = true;
-        } else {
-            drawhero = false;
-        }
-    }
-     
-    this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision);
-      
-    if (drawhero == true) {
-          this.x = 300;
-          this.y = 300;
-      }
+    
 };

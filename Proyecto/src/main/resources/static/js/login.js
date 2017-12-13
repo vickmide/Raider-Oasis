@@ -16,7 +16,7 @@ $(document).ready(function() {
 	//var mostraruser = document.getElementById("username");
 	//var mostrarclave = document.getElementById("clave");
 	//var mostrarpunt = document.getElementById("puntuacionMax");
-    if (logedUser == "") {
+    /*if (logedUser == "") {
     	if (canvas != null) {
     		// Estan en la pagina de play
     		canvas.style.display = "none";
@@ -27,7 +27,7 @@ $(document).ready(function() {
     		alert("Debes estar registrado y logeado para ver esta página");
         	window.location.href = "index.html";
     	}
-    } else {
+    }*//*else {*/
     	//alert("Tu id es " + logedUser + "!");
     	if (loginbox != null) {
     		// Estan en la pantalla de login, logeados
@@ -49,7 +49,7 @@ $(document).ready(function() {
     	        }
     	    });
     	}
-    }
+   /* }*/
 });
 
 function validateLogin() {
@@ -131,7 +131,7 @@ function register() {
             "Content-Type": "application/json"
         }
     }).done(function (perfil) {
-        console.log("Perfil creado: " + JSON.stringify(perfil));
+        //console.log("Perfil creado: " + JSON.stringify(perfil));
     });
     alert("Registration success!");
     document.forms["loginForm"].reset();

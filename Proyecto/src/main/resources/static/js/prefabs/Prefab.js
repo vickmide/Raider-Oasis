@@ -9,8 +9,8 @@ ProceduralGeneration.Prefab = function (game_state, name, position, properties) 
     this.name = name;
     
     if (!this.game_state.groups[properties.group]) {
-        console.log(properties.group);
-        console.log("group do not exist");
+        //console.log(properties.group);
+        //console.log("group do not exist");
     }
     this.game_state.groups[properties.group].add(this);
     this.frame = +properties.frame;

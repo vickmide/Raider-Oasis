@@ -10,8 +10,8 @@ $(document).ready(function() {
             '<td>'+datos[i].puntuacionMax+'</td>'+
             '</tr>';
             }
-            console.log(JSON.stringify(datos));
-            console.log(d);
+            //console.log(JSON.stringify(datos));
+            //console.log(d);
             $('#tablebod').append(d);
     });
 });

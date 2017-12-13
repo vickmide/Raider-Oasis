@@ -35,11 +35,8 @@ ProceduralGeneration.InitDungeonState.prototype.init = function (sala) {
     rntile = this.sala.rntile;
     rnsize = this.sala.rnsize;
     rntilecenter = this.sala.rntilecenter;
-    
-    console.log(rnprefab);
-    console.log(this.sala.rnprefab);
+
     rnprefab = this.sala.rnprefab;
-    console.log(rnprefab);
 };
 
 //Override de create de la superclase

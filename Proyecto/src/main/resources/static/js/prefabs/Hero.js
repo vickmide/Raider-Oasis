@@ -1,15 +1,6 @@
 var ProceduralGeneration = ProceduralGeneration || {};
-hola = {
-    texto : "hola"
-}
-$(document).ready(function () {
-    connection = new WebSocket('ws://127.0.0.1:8181/game');
 
-    connection.onerror = function (e) {
-        console.log("WS error: " + e);
-    }
 
-});
 ProceduralGeneration.Hero = function (game_state, name, position, properties) {
     ProceduralGeneration.Prefab.call(this, game_state, name, position, properties);
 
@@ -53,8 +44,6 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
         x: xhero,
         y: yhero
     };
-    console.log(hero_id);
-    connection.send(JSON.stringify(salahero));
 };
 
 ProceduralGeneration.Hero.prototype = Object.create(ProceduralGeneration.Prefab.prototype);

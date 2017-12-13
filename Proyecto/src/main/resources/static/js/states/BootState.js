@@ -15,7 +15,7 @@ ProceduralGeneration.BootState.prototype.constructor = ProceduralGeneration.Boot
 ProceduralGeneration.BootState.prototype.init = function (level_file, next_state, extra_parameters, score, life, direction) {
     "use strict";
     this.level_file = level_file; //Ruta del JSON
-    console.log(this.level_file);
+    //console.log(this.level_file);
     this.next_state = next_state; //Contexto de RoomState
     this.extra_parameters = extra_parameters; //Sala inicial
     this.score = score || 0;
