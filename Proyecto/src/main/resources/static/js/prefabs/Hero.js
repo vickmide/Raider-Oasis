@@ -40,20 +40,32 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
     xhero = this.game_state.room.coordinate.row;
     yhero = this.game_state.room.coordinate.column;
     salahero = {
-        id: hero_id,
-        x: xhero,
-        y: yhero
-    };
-    
+            //id: hero_id,
+            x: xhero,
+            y: yhero
+        };
     mensaje = {"protocolo":"door_msg","roomX":xhero,"roomY":yhero};
-    connection.send(JSON.stringify(mensaje));
+	connection.send(JSON.stringify(mensaje));
 };
 
 ProceduralGeneration.Hero.prototype = Object.create(ProceduralGeneration.Prefab.prototype);
 ProceduralGeneration.Hero.prototype.constructor = ProceduralGeneration.Hero;
 
 ProceduralGeneration.Hero.prototype.update = function () {
-
+	
+	if (WSResponse_doorMsg) {
+        console.log("Alguien ha pasado por una puerta!");
+        WSResponse_doorMsg = false;
+    }
+	
+	if ((salahero.x == salaother.x)&&(salahero.y == salaother.y)) {
+    	console.log("Estais en la misma sala!");
+    	mismasala = true;
+    } else {
+    	console.log("No estais en la misma sala");
+    	mismasala = false;
+    }
+	
     this.game_state.game.physics.arcade.collide(this, this.game_state.layers.collision);
     if (this.game_state.game.physics.arcade.overlap(this, this.game_state.groups.enemies, null, null, this) ||
         this.game_state.game.physics.arcade.overlap(this, this.game_state.groups.trienemies, null, null, this) ||
