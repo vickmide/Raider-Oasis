@@ -102,7 +102,7 @@ public class PerfilController {
 	}
 	
 	// Dar una puntuación nueva a un jugador segun su ID
-	@PostMapping("/puntuaciones/{id}/{puntuacion}")
+	@PostMapping("/puntuacion/{id}/{puntuacion}")
 	public ResponseEntity<HttpStatus> updatePuntuaciones(@PathVariable int id, @PathVariable int puntuacion) {
 
 		Perfil savedPerfil = perfiles.get(id);
