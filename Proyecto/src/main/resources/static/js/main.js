@@ -46,6 +46,7 @@ $(document).ready(function () {
     WSResponse_unionSala = false;
     WSResponse_doorMsg = false;
     WSResponse_positionMsg = false
+    WSResponse_spawnMsg = false
 
     connection.onmessage = function(msg) {
         console.log("WS message: " + msg.data);
@@ -77,6 +78,10 @@ $(document).ready(function () {
             };
         	WSResponse_positionMsg = true;
         	break;
+        case "spawnentity_msg":{
+        	WSResponse_spawnMsg = true;
+        	break;
+        }
         }  
        }
 });

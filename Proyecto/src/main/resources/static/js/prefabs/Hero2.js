@@ -36,6 +36,11 @@ ProceduralGeneration.Hero2 = function (game_state, name, position, properties) {
     this.body.width = 25;
     this.body.height = 25;
     
+    if (!mismasala) {
+		  this.visible = false;
+	  } else {
+		  this.visible = true;
+	 }
     //this.animations.add("walking", [1, 2, 3, 4], 6, true);
     //this.cursors = this.game_state.game.input.keyboard.createCursorKeys();
     globalhero2 = this;
@@ -57,7 +62,7 @@ ProceduralGeneration.Hero2.prototype.update = function () {
 	    	WSResponse_positionMsg = false;
 	    }
 	  
-	  if ((salahero.x != salaother.x)&&(salahero.y != salaother.y)) {
+	  if (!mismasala) {
 		  this.visible = false;
 	  } else {
 		  this.visible = true;
