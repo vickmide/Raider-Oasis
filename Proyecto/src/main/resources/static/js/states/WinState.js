@@ -33,7 +33,7 @@ WinState.prototype.create = function () {
             //console.log("Tu id es " + logedUser + "!");
             $.ajax({
                 method: "POST",
-                url: 'http://localhost:8181/perfil/puntuacion' + logedUser + score,
+                url: 'http://localhost:8181/perfil/puntuacion/' + logedUser + '/'+ score,
                 data: JSON.stringify({}),
                 processData: false,
                 headers: {
