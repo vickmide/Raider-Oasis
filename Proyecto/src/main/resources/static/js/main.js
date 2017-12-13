@@ -79,13 +79,13 @@ $(document).ready(function () {
             };
         	WSResponse_positionMsg = true;
         	break;
-        case "spawnentity_msg":{
+        case "spawnentity_msg":
         	WSResponse_spawnMsg = true;
         	break;
-        case "endgame_msg":{
+        case "endgame_msg":
         	WSResponse_endMsg = true;
         	break;
-        }
+        
         }  
        }
 });
