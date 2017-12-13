@@ -138,6 +138,14 @@ Para registrar un perfil con el que jugar, simplemente hay que rellenar el campo
 
 ## Protocolo Utilizado
 
+Se ha implementado el uso de WebSockets en esta fase para un correcto funcionamiento del videojuego en modo multijugador. El WebSocket se crea en el cliente en el archivo main.js, y en ese mismo sitio se reciben los datos necesarios con el método onmessage(). 
+
+![WebSocket1](Pantallas/WSCliente.png)
+
+Cuando sea necesario se mandarán los datos mediante .send al servidor. El servidor responderá de una manera u otra dependiendo del valor de una variable string llamada 'protocolo', que especificará los datos que se quieren trabajar en el WebSocket. Todo esto tiene lugar en PlayerHandler.java
+
+![WebSocket1](Pantallas/WSCliente.png)
+
 ## Actualización del diagrama de clases
 
 ## Cómo iniciar el videojuego + Gameplay
