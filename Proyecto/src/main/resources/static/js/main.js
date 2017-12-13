@@ -19,6 +19,11 @@ salaother = {
         x: 0,
         y: 0
     };
+otherheropos = {
+		x: 0,
+		y: 0,
+		xscale: 1
+};
 mismasala = true;
 
 //VARIABLES CLIENTE-SERVIDOR
@@ -40,6 +45,7 @@ $(document).ready(function () {
     WSResponse_salaCreada = false;
     WSResponse_unionSala = false;
     WSResponse_doorMsg = false;
+    WSResponse_positionMsg = false
 
     connection.onmessage = function(msg) {
         console.log("WS message: " + msg.data);
@@ -63,8 +69,13 @@ $(document).ready(function () {
             };
         	WSResponse_doorMsg = true;
         	break;
-        case "entity_msg":
-        	WSResponse_entityMsg = true;
+        case "position_msg":
+        	otherheropos = {
+                x: misdatos.otherposX,
+                y: misdatos.otherposY,
+                xscale: misdatos.otherScale
+            };
+        	WSResponse_positionMsg = true;
         	break;
         }  
        }

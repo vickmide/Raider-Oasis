@@ -21,11 +21,16 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
         this.x = (3 * tile_size) - offset_x;
         this.y = (6 * tile_size) - offset_y + 10;
     }
+    
+    // Asi no se repiten mil veces los console logs de prueba de si estan en la misma sala o no
+    this.consolelog1existe = false;
+    this.consolelog2existe = false;
 
     // El anchor del sprite es necesario que esté a los pies del personaje, para que no se "suba por encima" de los obstáculos al chocarse desde arriba
     this.anchor.setTo(0.5, 1); // x = mitad del sprite, y = abajo del todo del sprite
 
     this.walking_speed = +properties.walking_speed;
+    
 
     this.game_state.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
@@ -44,6 +49,11 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
             x: xhero,
             y: yhero
         };
+    
+    lastpos = {
+    	x: 0,
+    	y: 0
+    };
     mensaje = {"protocolo":"door_msg","roomX":xhero,"roomY":yhero};
 	connection.send(JSON.stringify(mensaje));
 };
@@ -52,17 +62,27 @@ ProceduralGeneration.Hero.prototype = Object.create(ProceduralGeneration.Prefab.
 ProceduralGeneration.Hero.prototype.constructor = ProceduralGeneration.Hero;
 
 ProceduralGeneration.Hero.prototype.update = function () {
-	
 	if (WSResponse_doorMsg) {
         console.log("Alguien ha pasado por una puerta!");
         WSResponse_doorMsg = false;
     }
 	
 	if ((salahero.x == salaother.x)&&(salahero.y == salaother.y)) {
-    	console.log("Estais en la misma sala!");
+		
+    	if (!this.consolelog1existe) console.log("Estais en la misma sala!");
+    	this.consolelog1existe = true;
+    	this.consolelog2existe = false;
+    	if (lastpos.x != this.x || lastpos.y != this.y) {
+	    	mensaje = {"protocolo":"position_msg","thisposX":this.x,"thisposY":this.y,"thisScale":this.scale.x};
+	    	lastpos.x = this.x;
+	    	lastpos.y = this.y;
+	    	connection.send(JSON.stringify(mensaje));
+    	}
     	mismasala = true;
     } else {
-    	console.log("No estais en la misma sala");
+    	if (!this.consolelog2existe) console.log("No estais en la misma sala");
+    	this.consolelog1existe = false;
+    	this.consolelog2existe = true;
     	mismasala = false;
     }
 	
