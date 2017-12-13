@@ -6,6 +6,7 @@ public class Player {
 	private int idsala;
 	private Point room;
 	private Point pos;
+	private int xscale;
 	private boolean status;
 	private boolean play;
 	
@@ -42,6 +43,14 @@ public class Player {
 
 	public void setPos(Point pos) {
 		this.pos = pos;
+	}
+	
+	public int getXScale() {
+		return xscale;
+	}
+	
+	public void setXScale(int xscale) {
+		this.xscale = xscale;
 	}
 	
 	public boolean isPlay() {

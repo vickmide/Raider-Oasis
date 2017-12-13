@@ -27,7 +27,6 @@ public class PlayerHandler extends TextWebSocketHandler {
 		Player p = new Player();
 		p.setPlay(false);
 		players.put(session.getId(), p);
-		
 	}
 	
 	@Override
@@ -39,7 +38,7 @@ public class PlayerHandler extends TextWebSocketHandler {
 	
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-		
+		synchronized (message) {		}
 		System.out.println("Message received: " + message.getPayload());
 		JsonNode node = mapper.readTree(message.getPayload());
 		
@@ -68,18 +67,47 @@ public class PlayerHandler extends TextWebSocketHandler {
 			
 			break;
 			
-		case "player_msg":
-			//METODO PARA JUGADORES
+		case "door_msg":
+			// METODO DE CAMBIAR DE SALA (ROOM, MAZMORRA)
+			
+			// Lee el mensaje
+			Point newroom = new Point();
+			newroom.setX(node.get("roomX").asInt());
+			newroom.setY(node.get("roomY").asInt());
+			players.get(session.getId()).setRoom(newroom);
+			
+			// Manda un mensaje al otro jugador
+			ObjectNode newDoorNode = mapper.createObjectNode();
+			newDoorNode.put("protocolo", "door_msg");
+			newDoorNode.put("newroomX", newroom.getX());
+			newDoorNode.put("newroomY", newroom.getY());
+			sendOtherParticipants(session, newDoorNode);
 			break;
-		case "enemy_msg":
-			//METODO PARA ENEMIGOS
+		case "position_msg":
+			// METODO PARA INTERCAMBIAR INFORMACION DE ENTIDADES (PLAYER, ENEMIGOS) ESTANDO EN LA MISMA SALA
+			
+			// Lee el mensaje
+			Point newpos = new Point();
+			newpos.setX(node.get("thisposX").asInt());
+			newpos.setY(node.get("thisposY").asInt());
+			players.get(session.getId()).setPos(newpos);
+			int xscale = node.get("thisScale").asInt();
+			players.get(session.getId()).setXScale(xscale);
+			
+			// Manda respuesta al otro jugador
+			ObjectNode newEntNode = mapper.createObjectNode();
+			newEntNode.put("protocolo", "position_msg");
+			newEntNode.put("otherposX", newpos.getX());
+			newEntNode.put("otherposY", newpos.getY());
+			newEntNode.put("otherScale", xscale);
+			sendOtherParticipants(session, newEntNode);
+			
 			break;
 		default:
 			System.out.println("ERROR: Mensaje no soportado");
 		}
-			
 	}
-	
+
 	private void notifyJ2 (JsonNode node, WebSocketSession session) throws IOException {
 		
 		ObjectNode join = mapper.createObjectNode();
@@ -112,21 +140,16 @@ public class PlayerHandler extends TextWebSocketHandler {
 		
 	}
 	
-	/*
+	// Solo dentro de EL MISMO LOBBY
 	private void sendOtherParticipants(WebSocketSession session, JsonNode node) throws IOException {
 
 		System.out.println("Message sent: " + node.toString());
-		ObjectNode newNode = mapper.createObjectNode();
-		newNode.put("id", node.get("id").asText());
-		newNode.put("xhero2", node.get("x").asText());
-		newNode.put("yhero2", node.get("y").asText());
-		
 		for(WebSocketSession participant : sessions.values()) {
-			if(!participant.getId().equals(session.getId())) {
-				participant.sendMessage(new TextMessage(newNode.toString()));
+			if(!participant.getId().equals(session.getId()) && (players.get(session.getId()).getIdsala() == players.get(participant.getId()).getIdsala())){
+				participant.sendMessage(new TextMessage(node.toString()));
 			}
+			
 		}
 	}
-	*/
 
 }
