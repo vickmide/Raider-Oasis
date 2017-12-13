@@ -142,7 +142,15 @@ Se ha implementado el uso de WebSockets en esta fase para un correcto funcionami
 
 ![WebSocket1](Pantallas/WSCliente.png)
 
-Cuando sea necesario se mandarán los datos mediante .send al servidor. El servidor responderá de una manera u otra dependiendo del valor de una variable string llamada 'protocolo', que especificará los datos que se quieren trabajar en el WebSocket. Todo esto tiene lugar en PlayerHandler.java
+Cuando sea necesario se mandarán los datos mediante .send al servidor. El servidor responderá de una manera u otra dependiendo del valor de una variable string llamada 'protocolo', que especificará los datos que se quieren trabajar en el WebSocket. Todo esto tiene lugar en PlayerHandler.java En concreto, se disponen de los siguientes posibles valores para 'protocolo':
+
+- "createSala_msg": notifica a los clientes que no esten jugando de que se ha creado una sala
+- "joinSala_msg": notifica al cliente que esta en una partida de que se le va a unir un jugador
+- "door_msg": notifica al cliente que esta dentro de una partida de que el otro jugador ha cambiado de habitación
+- "position_msg": notifica al cliente que esta dentro de una partida de la posición actual del jugador contrario
+- "spawnentity_msg": notifica al cliente que esta dentro de una partida de un enemigo
+- "updateentity_msg": notifica al cliente que esta dentro de una partida de que tiene que actualizar a un enemigo
+- "endgame_msg": notifica a los jugadores de una misma partida de que el juego ha terminado.
 
 ![WebSocket1](Pantallas/WSServidor.png)
 
