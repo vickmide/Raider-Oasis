@@ -44,6 +44,9 @@ ProceduralGeneration.Hero = function (game_state, name, position, properties) {
         x: xhero,
         y: yhero
     };
+    
+    mensaje = {"protocolo":"door_msg","roomX":xhero,"roomY":yhero};
+    connection.send(JSON.stringify(mensaje));
 };
 
 ProceduralGeneration.Hero.prototype = Object.create(ProceduralGeneration.Prefab.prototype);
