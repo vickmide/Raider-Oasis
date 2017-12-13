@@ -144,7 +144,7 @@ Se ha implementado el uso de WebSockets en esta fase para un correcto funcionami
 
 Cuando sea necesario se mandarán los datos mediante .send al servidor. El servidor responderá de una manera u otra dependiendo del valor de una variable string llamada 'protocolo', que especificará los datos que se quieren trabajar en el WebSocket. Todo esto tiene lugar en PlayerHandler.java
 
-![WebSocket1](Pantallas/WSCliente.png)
+![WebSocket1](Pantallas/WSServidor.png)
 
 ## Actualización del diagrama de clases
 
