@@ -17,6 +17,7 @@ public class PlayerHandler extends TextWebSocketHandler {
 	private Map<String, WebSocketSession> sessions = new ConcurrentHashMap<>();
 	private Map<Integer, Sala> salas = new ConcurrentHashMap<>();
 	private Map<String, Player> players = new ConcurrentHashMap<>();
+	private Map<Point, Entity> entities = new ConcurrentHashMap<>();
 	
 	private ObjectMapper mapper = new ObjectMapper();
 	
@@ -84,7 +85,7 @@ public class PlayerHandler extends TextWebSocketHandler {
 			sendOtherParticipants(session, newDoorNode);
 			break;
 		case "position_msg":
-			// METODO PARA INTERCAMBIAR INFORMACION DE ENTIDADES (PLAYER, ENEMIGOS) ESTANDO EN LA MISMA SALA
+			// METODO PARA INTERCAMBIAR INFORMACION DE JUGADORES ESTANDO EN LA MISMA SALA
 			
 			// Lee el mensaje
 			Point newpos = new Point();
@@ -95,13 +96,34 @@ public class PlayerHandler extends TextWebSocketHandler {
 			players.get(session.getId()).setXScale(xscale);
 			
 			// Manda respuesta al otro jugador
+			ObjectNode newPosNode = mapper.createObjectNode();
+			newPosNode.put("protocolo", "position_msg");
+			newPosNode.put("otherposX", newpos.getX());
+			newPosNode.put("otherposY", newpos.getY());
+			newPosNode.put("otherScale", xscale);
+			sendOtherParticipants(session, newPosNode);
+			
+			break;
+		case "spawnentity_msg":
+			// METODO PARA SPAWNEAR ENEMIGOS
+			
+			// Lee el mensaje y crea la entidad
+			Entity newentity = new Entity();
+			newentity.setX(node.get("thisX").asInt());
+			newentity.setY(node.get("thisY").asInt());
+			newentity.setType(node.get("thistype").asText());
+			newentity.setVivo(true);
+			
+			// Envia la informacion de la entidad al otro jugador
 			ObjectNode newEntNode = mapper.createObjectNode();
-			newEntNode.put("protocolo", "position_msg");
-			newEntNode.put("otherposX", newpos.getX());
-			newEntNode.put("otherposY", newpos.getY());
-			newEntNode.put("otherScale", xscale);
+			newEntNode.put("protocolo", "spawnentity_msg");
+			newEntNode.put("thisX", newentity.getX());
+			newEntNode.put("thisY", newentity.getY());
+			newEntNode.put("thistype", newentity.getType());
 			sendOtherParticipants(session, newEntNode);
 			
+			break;
+		case "updateentity_msg":
 			break;
 		default:
 			System.out.println("ERROR: Mensaje no soportado");
