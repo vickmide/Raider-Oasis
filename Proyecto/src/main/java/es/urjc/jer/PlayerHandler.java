@@ -125,6 +125,12 @@ public class PlayerHandler extends TextWebSocketHandler {
 			break;
 		case "updateentity_msg":
 			break;
+		case "endgame_msg":
+			// Envia la informacion de la entidad al otro jugador
+			ObjectNode newEndNode = mapper.createObjectNode();
+			newEndNode.put("protocolo", "endgame_msg");
+			sendOtherParticipants(session, newEndNode);
+			break;
 		default:
 			System.out.println("ERROR: Mensaje no soportado");
 		}
