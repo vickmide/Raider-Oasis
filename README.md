@@ -167,6 +167,8 @@ A continuación se muestra un diagrama de clases actualizado con las clases impl
 ![Diagrama de Clases](Pantallas/DIAGRAMAFINAL.png)
 
 ## Cómo iniciar el videojuego + Gameplay
+Enlace al grupo de trabajo en trello: [fase 4 - juegos en red](https://www.youtube.com/watch?v=rAGSy2TmIhw&feature=youtu.be)
+
 
 ## Equipo de desarrollo
 
