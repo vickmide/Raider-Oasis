@@ -47,6 +47,7 @@ $(document).ready(function () {
     WSResponse_doorMsg = false;
     WSResponse_positionMsg = false
     WSResponse_spawnMsg = false
+    WSResponse_endMsg = false
 
     connection.onmessage = function(msg) {
         console.log("WS message: " + msg.data);
@@ -80,6 +81,9 @@ $(document).ready(function () {
         	break;
         case "spawnentity_msg":{
         	WSResponse_spawnMsg = true;
+        	break;
+        case "endgame_msg":{
+        	WSResponse_endMsg = true;
         	break;
         }
         }  

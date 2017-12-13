@@ -97,6 +97,10 @@ ProceduralGeneration.Hero.prototype.update = function () {
             game.state.start("GameOverState", true, false, score);
         }
     }
+    if (WSResponse_endMsg) {
+    	game.state.start("GameOverState", true, false, score);
+    	WSResponse_endMsg = false;
+    }
     if (life >= 500) {
         player = game.add.sprite(20, 20, 'fullLife');
     } else if (life > 400) {
