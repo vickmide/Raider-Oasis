@@ -1,5 +1,10 @@
 # RAIDER OASIS
 
+# Presentación del proyecto
+El proyecto expuesto a continuación expone de una forma breve el desarrollo de una practica universitaria para la asignatura "Juegos en Red" dentro de la Universidad Rey Juan Carlos. En este proyecto, se propone desarrollar un videojuego online multijugador que contenga, al menos, el uso de tecnologías API REST y WebSockets, así como el resto de implementación necesaria para la creación de un juego de estas características. 
+
+Nota: Las siguientes lineas del documento unicamente describen la arquitectura del proyecto así de cambios realizados en el.
+
 # Fase 1 - Equipo de desarrollo y temática del juego
 
 ## Descripción general
@@ -178,4 +183,3 @@ Enlace al grupo de trabajo en trello: [fase 4 - juegos en red](https://www.youtu
 |José Ángel Cívico Martos|ja.civico@alumnos.urjc.es|Gleanx|
 |Nicolás Morales Berea|i.moralesb@alumnos.urjc.es|nichromatic|
 
-Enlace al grupo de trabajo en trello: [trello.com/juegosenred](https://trello.com/juegosenred/members)
